@@ -15,7 +15,7 @@
     "express-session": "^1.16.1",
     "instamojo-nodejs": "0.0.5",
     "instamojo-webhook": "^1.0.0",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "nodemailer": "^6.2.1"
   }
 }
