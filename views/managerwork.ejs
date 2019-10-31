@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>ht_tr</title>
+     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styleadmin.css">
+  </head>
+<style type="text/css">
+  .backlogo
+  {
+    top:70;
+  }
+  .body
+  {
+     background-image: linear-gradient(to right, lightblue,lightblue,white,white,white,white,lightblue);
+  }
+</style>
+<body>
+
+
+<section style="background-color: black;color:white;">
+   <div id="work-in-progress">
+        <div class="work-spinner"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+      </div>
+
+      <div class="col-lg-6">
+          <div class="row">
+            <div class="col">Map
+            </div>
+            <div class="col">Location
+            </div>
+            <div class="col">Tenders
+            </div>
+            <div class="col">jobs
+            </div>
+            <div class="col">Webmail
+            </div>
+            
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  
+
+
+
+
+ <section id="top-nav"  >
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(77, 148, 255);padding:2% 5%" >
+  <a class="navbar-brand" href="/admin" style="font-family: georgia;color:white;"> <i class="fa fa-user" style="color:white;border:0.5px solid white;border-radius: 50%;padding: 13% 19%"></i> ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+   
+    </ul>
+    <form class="form-inline my-2 my-lg-0" >
+    <ul class="navbar-nav mr-auto" style="font-weight:bold;font-family:coiny;" >
+      
+      <li id="li" class="nav-item" >
+           <a style="color:white; margin-left:10px;margin-top:2px;font-family: georgia"  class="btn btn-outline btn-lg" data-toggle="modal" data-target="#myModal"> Add_Emp  <i class="fa fa-arrow-down" style="color:white;"></i></a>
+      </li>
+      <li id="li" class="nav-item"><a hreff="#" style="color:white; margin-left:10px;margin-top:2px;font-family: georgia"  class="btn btn-outline btn-lg" onclick="showemp()">Remove_Emp <i class="fa fa-minus-circle" style="color:white;"></i></a> </li>
+      <% if(ses.length==6){ %>
+         <li id="li" class="nav-item"><a href="/logout" style="color:white; margin-left:10px;margin-top:2px;font-family: georgia"  class="btn btn-outline btn-lg" >Logout <i class="fa fa-lock" style="color:white;"></i></a> </li>
+
+         <li id="li" class="nav-item"><a style="color:white; margin-left:10px;margin-top:2px;font-family: georgia"  class="btn btn-outline btn-lg"> 
+          <i class="fa fa-user" style="color:white;border:0.5px solid white;border-radius: 50%;padding: 2% 7%"></i>
+        </br><%= foundlist.fullname %></a> </li>
+
+     <% } %>
+     </ul>
+    </form>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<section class="body">
+  
+  <div class="sidebar" style="text-align: center;font-family: georgia;color:white;">
+      <!--<a class="active"  style="background-color: blue;" onclick="showcustomer()">Customerlist</a>-->
+      <a href="#" style="background-color: blue;" onclick="showcustm()">Remove Customer</a>
+      <a href="#"  onclick="Employeedetail()">Employee Details</a>
+      <a href="#" onclick="Customerdetail()">Customer Details</a>
+      <!--<a href="#" onclick="showmanager()">Managerlist</a>-->
+  </div>
+
+<div class="content">
+
+
+
+
+
+
+<section id="addEmp">
+        <div style="color: rgb(0, 0, 102);font-family: Courier New;font-weight: bold;font-size: 30px;margin-top:60px;text-align: center;">
+              <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+             <p style="margin-top:20px">Add EMPLOYEE</p>
+        </div>
+          <hr width="40%" color="bslack"> 
+          
+       
+          <div class="container">
+              <form  style="text-align: center;">
+                
+                     </br>
+                     </br>
+
+                 
+                      <div class="alert alert-success  col-lg-4" role="alert" id="notfixedcontent2">
+                          <strong>Successfully Added</strong>
+                         
+                      </div>
+                 
+                     <div class='input-container'>
+                     <i class="fa fa-user icon" style="background-color:lightblue"></i>
+                     <input style="width:100%;height:50px;outline:none;" id="fullname" type="text" name="fullname" class="input-field" placeholder="Your fullname" required autofocus>
+                     </br>
+                    </div>
+
+                    <div class='input-container'>
+                       <i class="fa fa-address-book icon"  style="background-color: lightblue"></i>
+                       <input style="width:100%;height:50px;outline:none;" id="address" type="text" name="address" class="input-field" placeholder="Your address" required autofocus>
+                      </br>
+                   </div>
+                  
+                  <div class='input-container'> 
+                     <i class='fas fa-phone icon' style="background-color:lightblue"></i> 
+                     <input style="width:100%;height:50px;outline:none;" id="contact" type="text" name="contact" class="input-field" placeholder="Your contact no plz" required autofocus>
+                     </br>
+                  </div>
+
+
+                   <div class='input-container'> 
+                       <i class="fa fa-envelope icon"  style="background-color:lightblue"></i>
+                       <input style="width:100%;height:50px;outline:none;" id="email" type="email" name="email" class="input-field" placeholder="Your email plz" required autofocus>
+                      </br>
+                  </div>
+                   
+                   <div class='input-container'> 
+                       <i class="fa fa-key icon"  style="background-color: lightblue"></i>
+                       <input style="width:100%;height:50px;outline:none;" id="password5"  type="password" name="password" class="input-field" placeholder="Temporary Password" required autofocus>
+                       </br>
+                   </div>
+                   <button style="background-color:lightblue;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="register"  id="submit5"  >Sign_Up</button>
+            
+                </form>
+
+           
+               
+        </div>
+       
+  
+</section>
+
+
+
+
+
+<section id="customer">
+  <div class="container">
+    
+   <div class="table-responsive">   
+        <table class="table table-striped">
+             <div style="color: rgb(0, 0, 102);font-family: Courier New;font-weight: bold;font-size: 30px;margin-top:60px;text-align: center;">
+                 Customer List
+              </div>
+              <hr width="80%" color="bslack">
+              <thead style="background-color: rgb(153, 255, 204);" >
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Email</th>
+                <th scope="col">password</th>
+              </tr>
+            </thead>
+             <% for(var i=0;i<foundlist1.length;i++){ %>
+            <tbody>
+              <tr>
+                <th scope="row"><%= i %></th>
+                <td><%=foundlist1[i].id %></td>
+                <td><%=foundlist1[i].fullname %></td>
+                <td><%=foundlist1[i].address %></td>
+                <td><%=foundlist1[i].contact %></td>
+                <td><%=foundlist1[i].email %></td>
+                <td><%=foundlist1[i].password %></td>
+              </tr>
+              
+             
+               <%} %>
+            </tbody>
+       </table>
+  </div>
+ </div>
+
+</section>
+
+
+
+    <section id="employee">
+  <div class="container">
+ <div class="table-responsive">   
+  <table class="table table-striped">
+       <div style="color: rgb(0, 0, 102);font-family: Courier New;font-weight: bold;font-size: 30px;margin-top:60px;text-align: center;">Employee List
+        </div>
+        <hr width="80%" color="bslack">
+          <thead style="background-color: rgb(153, 255, 204);" >
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Email</th>
+            <th scope="col">password</th>
+          </tr>
+        </thead>
+         <% for(var i=0;i<foundlist2.length;i++){ %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= i %></th>
+            <td><%=foundlist2[i].id %></td>
+            <td><%=foundlist2[i].fullname %></td>
+            <td><%=foundlist2[i].address %></td>
+            <td><%=foundlist2[i].contact %></td>
+            <td><%=foundlist2[i].email %></td>
+            <td><%=foundlist2[i].password %></td>
+          </tr>
+          
+         
+           <%} %>
+        </tbody>
+   </table>
+</div>
+
+        </div>
+
+    </section>
+
+
+
+
+  <section style="margin-top:40px;" id="removeemp">
+       <div style="color: rgb(0, 0, 102);font-family: Courier New;font-weight: bold;font-size: 30px;margin-top:60px;text-align: center;">
+           <img src="2.jpg" class='img-fluid' style='width:50px;height: 50px'>
+      </div>
+      <div style="color: rgb(0, 0, 102);font-family: Courier New;font-weight: bold;font-size: 30px;margin-top:10px;text-align: center;">
+
+          Remove Employee
+      </div>
+      <hr width="80%" color="bslack">
+       
+      <div class='container'>
+        
+          <form class="form-sign-in">
+                  <center><div class="alert alert-success alert-dismissible fade show col-lg-4" role="alert" id="notfixedcontent">
+                      <strong>Successfully Removed</strong>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div></center>
+             <center>
+                <input  style="width:60%;height: 50px" type="text" class="form-control" id="ids" name="ids" placeholder="enter the id of the employee"></br>
+                <button style="background-color:red;padding: 10px 100px" class="btn btn-lg btn-primary btn" type="submit" name="button" value="removeemp"  id="submit1">Remove</button>
+            </center>
+            
+         </form>
+      </div>
+  </section>
+
+
+
+
+
+  <section style="margin-top:40px;" id="removecustm">
+      <div style="color: rgb(0, 0, 102);font-family: Courier New;font-weight: bold;font-size: 30px;margin-top:60px;text-align: center;">
+          Remove Customer
+      </div>
+      <hr width="80%" color="bslack">
+           
+      <div class='container' style="margin-top: 50px">
+        
+          <form class="form-sign-in">
+            <center><input style="width:60%;height: 50px" type="text" class="input-group" id="id2s" name="id2s" placeholder="enter the id of the customer"></br>
+            <button onclick="removecustm()" style="background-color:red;padding: 10px 100px" class="btn btn-lg btn-primary btn" type="submit" name="button" value="removecustm"  id="submit2">Remove</button></center>
+            
+         </form>
+      </div>
+  </section>
+
+
+
+
+</div>
+</section>
+
+
+<script>
+$(document).ready(function(){
+  $('#notfixedcontent').hide();
+  $('#notfixedcontent2').hide();
+
+    var email,pass,fullname,address,contact;
+          $("#submit5").click(function(){
+               email=$("#email").val();
+               pass=$("#password5").val();
+               fullname=$("#fullname").val();
+               address=$("#address").val();
+               contact=$("#contact").val();
+        
+              var regex = /^[A-Za-z0-9 ]+$/
+                if(pass.length<8)
+                {
+                  alert('your password should be 8 characters');
+                  return false;
+                }
+
+               if(isNaN(contact) || contact.length <10) 
+                {
+                  alert('its not a valid contact');
+                  return false;
+                }
+
+                if(!regex.test(fullname))
+                {
+                  alert('name  should not have special character');
+                  return false;
+                }
+
+
+
+        $.post("/addemployee",{email:email,password:pass,address:address,fullname:fullname,contact:contact},function(data){
+              if(data==='no')
+               {
+                    alert("this email  is already registerd")
+                    document.getElementById("demo").innerHTML="sjsflslf";
+               }  
+              else if(data==='save')
+              {
+                $('#notfixedcontent2').show();
+                return false;
+              }
+              else
+              {
+                alert('some fields are empty');
+              }
+        });
+        return false;
+         
+    });
+
+
+
+
+
+
+
+
+    $("#submit1").click(function(){
+           var id=$("#ids").val();
+       if(id=="")
+       {
+         alert('field cannot be empty');
+         return false;
+       }
+
+       $.post('/removeemployee',{id:id},function(data){
+           if(data=='sorry')
+           {
+                alert('no user exist with this id');
+                return false;
+             // document.getElementById("demo").innerHTML='sorry no user with this id';
+           }
+
+           if(data==='done')
+           {
+              $('#notfixedcontent').show();
+              return false;
+           }
+       })
+       return false;
+
+
+     })
+});
+
+
+    
+
+    document.getElementById("customer").style.display="none";
+    document.getElementById("employee").style.display="none";
+    document.getElementById("removecustm").style.display="none";
+    document.getElementById("removeemp").style.display="none";
+
+    function Customerdetail()
+    {
+        document.getElementById("customer").style.display='block';
+        document.getElementById("employee").style.display="none";
+        document.getElementById("removecustm").style.display="none";
+       document.getElementById("removeemp").style.display="none";
+       document.getElementById("addEmp").style.display="none";
+    }
+
+    function Employeedetail()
+    {
+        document.getElementById("customer").style.display='none';
+       document.getElementById("employee").style.display="block";
+       document.getElementById("removecustm").style.display="none";
+    document.getElementById("removeemp").style.display="none";
+    document.getElementById("addEmp").style.display="none";
+    }
+
+
+    function showemp()
+    {
+       document.getElementById("removeemp").style.display="block";
+       document.getElementById("customer").style.display="none";
+       document.getElementById("employee").style.display="none";
+       document.getElementById("removecustm").style.display="none";
+       document.getElementById("addEmp").style.display="none";
+    }
+
+    function showcustm()
+    {
+      document.getElementById("removeemp").style.display="none";
+       document.getElementById("customer").style.display="none";
+       document.getElementById("employee").style.display="none";
+       document.getElementById("removecustm").style.display="block";
+       document.getElementById("addEmp").style.display="none";
+    }
+
+    function removeemp()
+    {
+       
+     
+    }
+
+
+
+    function removecustm()
+    {
+          var id=$("#id2s").val();
+       if(id=="")
+       {
+         alert('field cannot be empty');
+         return false;
+       }
+
+       $.post('/removecustomer',{id:id},function(data){
+           if(data=='sorry')
+           {
+                alert('no user exist with this id');
+             // document.getElementById("demo").innerHTML='sorry no user with this id';
+           }
+
+           if(data==='done')
+           {
+              window.location.href='/successfullyremoved';
+           }
+       })
+    }
+  
+</script>

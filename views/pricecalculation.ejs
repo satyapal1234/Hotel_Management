@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>ht_tr</title>
+     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+<body>
+
+
+<section>
+  
+  
+  <div class="container">
+    <div class="container">
+       <div class="container">
+          <div class="container">
+            <div class="container">
+              <div class="container">
+                <div class="container">
+                  <div class="container" id="print">
+                    <center>
+                        <img src="logo2.png" style="height: 100px;width: 100px;border-radius: 50%">
+                     </center>
+                   <div style="text-align:center;font-family: cursive;color:red;">HOTEL RED RUBY  WELCOMES YOU</div></br>
+                    <div style="text-align: center;">Payment Detail</div>
+                   <table class="table">
+                     <tr>
+                       <th>Item Name</th>
+                       <th>Quantity</th>
+                       <th>Rate</th>
+                       <th>Price</th>
+                      </tr>
+                  
+
+                  <tbody>
+                    <% for(var i=0;i<items.length;i++) {%>
+                        <tr>
+                            <td><%= items[i]%></td>
+                            <td><%= quantity[i]%></td>
+                            <td><%= rate[i]%></td>
+                            <td><%= price[i]%></td>
+                        </tr>
+                    <%}%>
+                    
+                  </tbody>
+                      
+                  </table>
+                  <div style="font-family: cursive;color:green;"> SubTotal Rs__________________________________________________________=<%=subtotal%></div>
+                  <div style="font-family: cursive;color:green;">Total Gst Cost Rs_____________________________________________18%  of <%=subtotal%> =<%=tax%></div>
+                  <div style="font-family: cursive;color:green;">Total Discount Rs_____________________________________________10%  of <%=subtotal%> =<%=discount%></div>
+                  <div style="font-family: cursive;color:green;"> Payable Amount Rs____________________________________________________=<%=totalamount%></div>
+
+                </br>
+                <div><span style="font-weight: bold;">Address:</span> West Rajasthan Durg Marg ,Jaipur______  <span style="font-weight: bold;">Contact:</span> 1234567890_______<span style="font-weight: bold;">Email:</span> xyzabc123@gmail.com______<span style="font-weight: bold;">Site URL: </span>www.hotel_and_tourism.com</div>
+
+                
+                 
+    
+    </div>
+              <div>
+                 <center> <button class="btn btn-danger" style="padding:0% 5%;" 
+                  onclick="printElem()">Print BILL</button></center>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+</section>
+
+<script>
+  function printElem() {
+  //document.getElementById("print").style.backgroundColor="red";
+    var content = document.getElementById("print").innerHTML;
+    var mywindow = window.open('', 'Print', 'height=600,width=800');
+
+    mywindow.document.write('<html><head><title>Print</title>');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write(content);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close();
+    mywindow.focus()
+    mywindow.print();
+    mywindow.close();
+    return true;
+}
+</script>
+</body>
+</html>
+
+

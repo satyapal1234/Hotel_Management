@@ -1,0 +1,2862 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>ht_tr</title>
+     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styleadmin.css">
+  </head>
+
+  <style>
+  .checked {
+     color: orange;
+   }
+   #input
+   {
+    color:black;
+   }
+</style>
+
+<body>
+   
+
+   <section style="background-color: black;color:white;">
+    <div class="row">
+      <div class="col-lg-6">
+      </div>
+
+      <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-2">Map
+            </div>
+            <div class="col-lg-2">Location
+            </div>
+            <div class="col-lg-2">Tenders
+            </div>
+            <div class="col-lg-2">jobs
+            </div>
+            <div class="col-lg-2">Webmail
+            </div>
+            <div class="col-lg-2">employees
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section  >
+    <p id="d"></p>
+  <div class="row">
+     <div class="col-lg-6" style="padding: 1% 5%;font-weight: bold;color:blue;font-size:30px;font-style: italic;">Hotel_Tourism
+     </div>
+
+      <div class="col-lg-6"  style="padding: 1% 12%;font-weight: bold;color:green;font-size:30px;font-style: italic;">
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+     </div>
+
+  </div> 
+     
+  </section>
+
+
+
+
+ <section style="background-color: rgb(255, 168, 128);padding:2% 5%">
+  <div class="row">
+   <div class="col-lg-6" style="color:white;font-family: cursive;font-weight: bold;"><i class='fas fa-desktop'></i> BOOK ROOM AT COMFORTABLE PRICE</div>
+
+   <div class="col-lg-6">
+     <marquee behavior="alternate"><h3 style="color:white;font-weight: bold;font-family: cursive;">Welcome to <%=loc%> city</h3></marquee>
+   </div>
+ </div>
+</section>
+
+
+
+  <section >
+
+    <% if(value==100) { %>
+     <div class="row">
+        <div class="col-lg-3" style="text-align: center;color:black;background-color: rgb(255, 238, 230);padding:2% 4%;">
+          <div style="font-weight: bold;">FILTER BY </div>
+          <div style="color:white;padding:4% 1%;">
+            </br>
+            <form id="form" action="/filterRoom" method="post" style="color:black">
+              <input type="hidden" name="checkindate" value="<%=checkindate %>" >
+              <input type="hidden" name="checkoutdate" value="<%=checkoutdate %>">
+              <input type="hidden" name="location" value="<%=loc %>">
+              <input type="radio"  onclick="document.getElementById('form').submit();" name="check" value="Single bed AC Room"  > Single bed AC Room
+              </br></br>
+              <input id="input" type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed AC Room"> Double Bed AC Room
+              </br></br>
+             <input  type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed AC Room"> Four Bed AC Room
+             </br></br>
+             <input  type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed NONAC Room"> Double bed NONAC Room
+             </br></br>
+             <input  type="radio" onclick="document.getElementById('form').submit();" name="check" value="Single bed NONAC Room"> Single Bed NONAC Room
+             </br></br>
+             <input  type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed NONAC Room"> Four Bed NONAC Room
+            </br></br>
+          </form>
+          </div>
+        </div>
+
+         <div class="col-lg-9">
+         </br></br>
+
+           <div class="row">
+            <div class="col-lg-4">
+               <div class="card" style="width: 18rem;">
+                <div class="card-body" style="text-align: center;">
+                     <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                     <g id="Asssets" transform="translate(-327.000000, -192.000000)">
+                     <g id="coupon-copy-2" transform="translate(331.000000, 196.000000)">
+                     <g id="Group-16">
+                      <polygon id="Star" stroke="#FFB121" fill="#FFB121" points="15.8704453 30.36016 12.7742751 31.6925645 10.4195472 29.2670579 7.05329833 29.3035138 5.7984988 26.1541665 2.67465231 24.8891237 2.71081301 21.4953953 0.304946157 19.1214452 1.62656194 16 0.304946157 12.8785548 2.71081301 10.5046047 2.67465231 7.11087627 5.7984988 5.84583349 7.05329833 2.6964862 10.4195472 2.73294209 12.7742751 0.307435514 15.8704453 1.63984 18.9666156 0.307435514 21.3213435 2.73294209 24.6875924 2.6964862 25.9423919 5.84583349 29.0662384 7.11087627 29.0300777 10.5046047 31.4359445 12.8785548 30.1143287 16 31.4359445 19.1214452 29.0300777 21.4953953 29.0662384 24.8891237 25.9423919 26.1541665 24.6875924 29.3035138 21.3213435 29.2670579 18.9666156 31.6925645"></polygon>
+                      <text id="%" font-family="Brown-Bold, Brown" font-size="14" font-weight="bold" fill="#FFFFFF">
+                      <tspan x="9.92712551" y="20">%</tspan>
+                    </text>
+                       </g>
+                       </g>
+                       </g>
+                       </g>
+                   </svg>
+                  <p class="card-text" style="color:red;">Hotel Grand Akarshak gurantees you for the safety of  your  luggage. All kind of facility will be provided </p>
+                  
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+                  <div class="card" style="width: 18rem;">
+                    <h4 style="text-align: center;"> Location <i class='fas fa-map-marker-alt'></i></h4>
+                    
+                      <img src="v7.png" class="card-img-top" alt="..."> 
+                         
+                </div>
+          </div>
+
+          </div></br></br>
+            
+             <% if(loc==='varanasi'){%>
+              <% for(var i=0;i<4;i++) { %>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v3.jpg" class="d-block w-100" alt="...">
+                          </div>
+                       </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+                 </a>
+                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                 </a>
+              </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                       <% if (i==0) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel Varanasi1</div>
+                       <% } %>
+                       <% if (i==1) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel Varanasi2</div>
+                       <% } %>
+                       <% if (i==2) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel Varanasi3</div>
+                       <% } %>
+                       <% if (i==3) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel Varanasi4</div>
+                       <% } %>
+                      <div style="color: red;font-family: cursive;">Features</div>
+                     
+                          <div style="color:green;" >
+                               <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                          </div>
+
+                          <div style="color:green;">
+                              <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                          </div>
+
+                          <div style="color:green;">
+                             <a >Free parking <i class='fas fa-car-side'></i></a>
+                          </div>
+                               </br>
+                           <div style="color: red;font-family: cursive;">Ratings</div>
+                       
+                          <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                          </div>
+                            
+                          <div class='row'>
+                            <div class='col-lg-4'>
+                              <a class="btn btn-outline-primary">Attached kitchen</a>
+                            </div>
+                             <div class='col-lg-4'>
+                              <a class="btn btn-outline-primary">Attached Bathroom</a>
+                            </div>
+                             <div class='col-lg-4'>
+                               <a class="btn btn-outline-primary">Hot &Cool Water</a>
+                            </div>
+                          </div>
+                           </br>
+
+                           <% if (i==0) {%>
+                          <div style="font-weight: bold;">Price <span>200 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==1) {%>
+                          <div style="font-weight: bold;">Price<span>400 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==2) {%>
+                          <div style="font-weight: bold;">Price<span>600 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==3) {%>
+                          <div style="font-weight: bold;">Price<span>800 Rs/night<span></div>
+                       <% } %>
+
+                          <div class="row">
+                           
+                            <div class="col-lg-4">
+                              <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">view Details</button>
+                            </div>
+                            
+
+                            
+                          </div>
+
+                    </div>
+
+                   
+
+                    
+                     </div>
+                   </br> </br>
+                     <% } %>
+             <% } %>
+
+
+
+
+
+
+
+
+
+                <% if(loc==='patna'){%>
+              <% for(var i=0;i<3;i++) { %>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p3.jpg" class="d-block w-100" alt="...">
+                          </div>
+                       </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+                 </a>
+                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                 </a>
+              </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                       <% if (i==0) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel PatnaOne</div>
+                       <% } %>
+                       <% if (i==1) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel PatnaTwo</div>
+                       <% } %>
+                       <% if (i==2) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel PatnaThree</div>
+                       <% } %>
+                       <% if (i==3) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel PatnaFour</div>
+                       <% } %>
+                      <div style="color: red;font-family: cursive;">Features</div>
+                     
+                          <div style="color:green;" >
+                               <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                          </div>
+
+                          <div style="color:green;">
+                              <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                          </div>
+
+                          <div style="color:green;">
+                             <a >Free parking <i class='fas fa-car-side'></i></a>
+                          </div>
+                               </br>
+                           <div style="color: red;font-family: cursive;">Ratings</div>
+                       
+                          <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                          </div>
+                            
+                          <div class='row'>
+                            <div class='col-lg-4'>
+                              <a class="btn btn-outline-primary">Attached kitchen</a>
+                            </div>
+                             <div class='col-lg-4'>
+                              <a class="btn btn-outline-primary">Attached Bathroom</a>
+                            </div>
+                             <div class='col-lg-4'>
+                               <a class="btn btn-outline-primary">Hot &Cool Water</a>
+                            </div>
+                          </div>
+                           </br>
+
+                           <% if (i==0) {%>
+                          <div style="font-weight: bold;">Price <span>200 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==1) {%>
+                          <div style="font-weight: bold;">Price<span>400 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==2) {%>
+                          <div style="font-weight: bold;">Price<span>600 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==3) {%>
+                          <div style="font-weight: bold;">Price<span>800 Rs/night<span></div>
+                       <% } %>
+
+                          <div class="row">
+                            
+                            <div class="col-lg-4">
+                              <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">view Details</button>
+                            </div>
+                            
+
+                            
+                          </div>
+
+                    </div>
+
+                   
+
+                    
+                     </div>
+                   </br> </br>
+                     <% } %>
+             <% } %>
+
+
+
+
+                      
+
+
+                      <% if(loc==='ranchi'){%>
+              <% for(var i=0;i<2;i++) { %>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p1.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p2.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p3.jpg" class="d-block w-100" alt="...">
+                          </div>
+                       </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+                 </a>
+                 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                 </a>
+              </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                       <% if (i==0) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel RanchiOne</div>
+                       <% } %>
+                       <% if (i==1) {%>
+                          <div style="text-align: center;font-family: coiny;color:green;">Hotel RanchiTwo</div>
+                       <% } %>
+                      
+                      <div style="color: red;font-family: cursive;">Features</div>
+                     
+                          <div style="color:green;" >
+                               <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                          </div>
+
+                          <div style="color:green;">
+                              <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                          </div>
+
+                          <div style="color:green;">
+                             <a >Free parking <i class='fas fa-car-side'></i></a>
+                          </div>
+                               </br>
+                           <div style="color: red;font-family: cursive;">Ratings</div>
+                       
+                          <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                          </div>
+                            
+                          <div class='row'>
+                            <div class='col-lg-4'>
+                              <a class="btn btn-outline-primary">Attached kitchen</a>
+                            </div>
+                             <div class='col-lg-4'>
+                              <a class="btn btn-outline-primary">Attached Bathroom</a>
+                            </div>
+                             <div class='col-lg-4'>
+                               <a class="btn btn-outline-primary">Hot &Cool Water</a>
+                            </div>
+                          </div>
+                           </br>
+
+                           <% if (i==0) {%>
+                          <div style="font-weight: bold;">Price <span>200 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==1) {%>
+                          <div style="font-weight: bold;">Price<span>400 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==2) {%>
+                          <div style="font-weight: bold;">Price<span>600 Rs/night<span></div>
+                       <% } %>
+                       <% if (i==3) {%>
+                          <div style="font-weight: bold;">Price<span>800 Rs/night<span></div>
+                       <% } %>
+
+                          <div class="row">
+                           
+                            <div class="col-lg-4">
+                              <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">view Details</button>
+                            </div>
+                            
+
+                            
+                          </div>
+
+                    </div>
+
+                   
+
+                    
+                     </div>
+                   </br> </br>
+                     <% } %>
+             <% } %>
+
+
+
+
+
+
+             
+        </div>
+
+     </div>
+     <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--FILTERED RESULT-->
+
+   <% if(value==99) {%>
+     <% if(loc==='varanasi') {%>
+    <div class="row">
+      <div class="col-lg-3" style="text-align: center;color:;background-color: rgb(255, 238, 230);padding:2% 4%;">
+          <div style="font-weight: bold;">FILTER BY </div>
+          <div style="color:white;padding:4% 1%;">
+            </br>
+            <form id="form" action="/filterRoom" method="post" style="color:black">
+              <input type="hidden" name="checkindate" value="<%=checkindate %>" >
+              <input type="hidden" name="checkoutdate" value="<%=checkoutdate %>">
+              <input type="hidden" name="location" value="<%=loc %>">
+            <input type="radio"  onclick="document.getElementById('form').submit();" name="check" value="Single bed AC Room" > Single bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed AC Room"> Double Bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed AC Room"> Four Bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed NONAC Room"> Double bed NONAC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Single bed NONAC Room"> Single Bed NONAC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed NONAC Room"> Four Bed NONAC Room
+            </br></br>
+          </form>
+          </div>
+        </div>
+
+
+        <div class="col-lg-9">
+          <div style="text-align: center;font-family: cursive;color:red;text-decoration: underline;"><h4>Result for <%= typeofroom %></h4></div>
+         </br>
+           <% if(typeofroom==='Single bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 300 Rs/night</h5>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>   </br>   
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 400 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               <% if((7-foundlist3.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiThree</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 500 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiThree">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               <% } %>
+
+
+
+
+
+               <% if((8-foundlist4.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiFour</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 600 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiFour">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               
+               <% } %>
+
+           <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+            <% if(typeofroom==='Double bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 350 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                           
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 450 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                           
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               <% if((7-foundlist3.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiThree</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 550 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiThree">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               <% } %>
+
+
+
+
+
+               <% if((8-foundlist4.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiFour</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 650 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                           
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               
+               <% } %>
+
+           <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <% if(typeofroom==='Four bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 390 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 470 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               <% if((7-foundlist3.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiThree</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 570 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               <% } %>
+
+
+
+
+
+               <% if((8-foundlist4.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel VaranasiFour</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 670 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelVaranasiFour">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               
+               <% } %>
+
+           <% } %>
+
+        </div>
+
+
+    </div>
+     <% }%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!--PATNA ROOM DETAIL DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD-->
+
+
+
+      <% if(loc==='patna') {%>
+    <div class="row">
+      <div class="col-lg-3" style="text-align: center;color:;background-color: rgb(255, 238, 230);padding:2% 4%;">
+          <div style="font-weight: bold;">FILTER BY </div>
+          <div style="color:white;padding:4% 1%;">
+            </br>
+            <form id="form" action="/filterRoom" method="post" style="color:black">
+              <input type="hidden" name="checkindate" value="<%=checkindate %>" >
+              <input type="hidden" name="checkoutdate" value="<%=checkoutdate %>">
+              <input type="hidden" name="location" value="<%=loc %>">
+            <input type="radio"  onclick="document.getElementById('form').submit();" name="check" value="Single bed AC Room" > Single bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed AC Room"> Double Bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed AC Room"> Four Bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed NONAC Room"> Double bed NONAC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Single bed NONAC Room"> Single Bed NONAC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed NONAC Room"> Four Bed NONAC Room
+            </br></br>
+          </form>
+          </div>
+        </div>
+
+
+        <div class="col-lg-9">
+          <div style="text-align: center;font-family: cursive;color:red;text-decoration: underline;"><h4>Result for <%= typeofroom %></h4></div>
+         </br>
+           <% if(typeofroom==='Single bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 300 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p5.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p6.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p7.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 400 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               <% if((7-foundlist3.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaThree</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 500 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaThree">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               <% } %>
+
+
+
+           <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <% if(typeofroom==='Double bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p5.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p6.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p7.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 350 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 450 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               <% if((7-foundlist3.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaThree</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 550 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaThree">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               <% } %>
+
+
+
+
+
+               
+
+           <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <% if(typeofroom==='Four bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatanOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 390 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 470 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               <% if((7-foundlist3.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v15.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v16.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v17.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel PatnaThree</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 570 Rs/night</h5></br>     
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelPatnaThree">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>
+                 </br></br>
+               <% } %>
+
+
+
+
+
+              
+           <% } %>
+
+        </div>
+
+
+    </div>
+     <% }%>
+
+
+
+
+
+
+
+
+<!--RANCHI ROOM DETAIL DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD-->
+
+
+
+
+      <% if(loc==='ranchi') {%>
+    <div class="row">
+      <div class="col-lg-3" style="text-align: center;color:;background-color: rgb(255, 238, 230);padding:2% 4%;">
+          <div style="font-weight: bold;">FILTER BY </div>
+          <div style="color:white;padding:4% 1%;">
+            </br>
+            <form id="form" action="/filterRoom" method="post" style="color:black">
+              <input type="hidden" name="checkindate" value="<%=checkindate %>" >
+              <input type="hidden" name="checkoutdate" value="<%=checkoutdate %>">
+              <input type="hidden" name="location" value="<%=loc %>">
+            <input type="radio"  onclick="document.getElementById('form').submit();" name="check" value="Single bed AC Room" > Single bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed AC Room"> Double Bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed AC Room"> Four Bed AC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Double bed NONAC Room"> Double bed NONAC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Single bed NONAC Room"> Single Bed NONAC Room
+            </br></br>
+            <input type="radio" onclick="document.getElementById('form').submit();" name="check" value="Four bed NONAC Room"> Four Bed NONAC Room
+            </br></br>
+          </form>
+          </div>
+        </div>
+
+
+        <div class="col-lg-9">
+          <div style="text-align: center;font-family: cursive;color:red;text-decoration: underline;"><h4>Result for <%= typeofroom %></h4></div>
+         </br>
+           <% if(typeofroom==='Single bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel RanchiOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 300 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelRanchiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p5.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p6.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p7.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel RachiTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 400 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelRanchiTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+       <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <% if(typeofroom==='Double bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="p5.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="p6.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="p7.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel RanchiOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 350 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelRanchiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel RanchiTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 450 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelRanchiTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+
+
+
+
+
+               
+               
+
+           <% } %>
+
+
+               <% if(typeofroom==='Four bed AC Room'){ %>
+               
+               <% if((5-foundlist1.length)>0) {%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v8.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v9.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="10.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel RanchiOne</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+
+                        <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 390 Rs/night</h5></br>
+
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                              <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelRanchiOne">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            
+                        </div>
+
+                    </div>
+                  </div>  
+                </br></br>
+               <% } %>
+
+
+
+
+               <% if((6-foundlist2.length)>0) {%>
+                 <div class="row">
+                    <div class="col-lg-6">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                         <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             <img src="v12.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="v13.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                             <img src="v14.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                          </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                          </a>
+                         </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="text-align: center;color:green;font-weight: bold;">Hotel RanchiTwo</div>
+                        <div style="color: red;font-family: cursive;">Features</div>
+                                <div style="color:green;" >
+                                 <a >Free Wifi <i class='fas fa-satellite-dish'></i></a>
+                                </div>
+                                <div style="color:green;">
+                                 <a >Free snacks <i class='fab fa-gitlab'></i></a>
+                               </div>
+                                 <div style="color:green;">
+                                   <a >Free parking <i class='fas fa-car-side'></i></a>
+                                 </div>
+                              </br>
+                         <div style="color:red;font-family: cursive;">Price</div>   
+                         <h5>Price 470 Rs/night</h5></br>
+                        <div style="color: red;font-family: cursive;">Ratings</div>
+                               <div >
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star"></span>
+                                 <span class="fa fa-star"></span>
+                               </div>      
+                         <div class="row">
+                            <div class="col-lg-4">
+                             <form method="post" action="/booknow">
+                                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                                 <input type="hidden" name="location" value="<%= loc%>">
+                                 <input type="hidden" name="nameofhotel" value="HotelRanchiTwo">
+                                 <button class="btn btn-danger" style="background-color: red;border-radius: 20px;">BOOK_NOW</button>
+                             </form>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                  </div></br></br>
+               
+               <% } %>
+            
+           <% } %>
+
+        </div>
+
+
+    </div>
+     <% }%>
+   <% }%>
+  
+  </section>
+
+
+
+<script>
+if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+  alert('hello world');
+}
+</script>
+
+</body>
+</html>

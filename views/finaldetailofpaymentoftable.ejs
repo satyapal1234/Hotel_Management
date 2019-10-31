@@ -1,0 +1,50 @@
+<%-include('header')-%>
+<style type="text/css">
+  label
+  {
+    width: 150px;
+  }
+</style>
+    <section  style="margin-top:0px;">
+         <div class="containr">
+            
+                        <div>
+                        <div class="row" style="margin:0 auto;">
+
+                            <div class="col-lg-3" style="background-color: rgb(255, 230, 204);">
+                                <h4 style="text-align: center;">SOME GUIDELINES</h4>
+                               <div  style="padding: 5% 0%;margin-left: 20px;"> Kindly fill the form with correct detail.As this record will be permanenty saved </br></br>
+                               The rooms of the hotel are luxurios .In case of any damage by you the hotel may charge you </br></br>
+                             In case of wrong submission of arrival or departure date while booking, then hotel will not responsible for this </br></br>
+                              please take  the screen shot of the payment</div>
+                           </div>
+
+
+                            <div class="col-lg-9" style="padding: 60px 50px;margin:0 auto">
+                                   <div style="font-weight: bold;text-align: center;font-family: Courier New;font-size: 25px;color:rgb(0, 0, 102)"> Final Submission For Payment Of Table</div>
+                                   <hr width="95%" color="black">
+                                  <center><form class="form-signin" style="margin-top:50px;" method="post" action="/bookyourtable">
+                                      <label>Enter Name:-</label><input style="width: 60%" type="text" name="fullname" id="fullname" required autofocus></br>
+                                      <label>Enter Contact:-</label><input style="width: 60%" type="text" name="contact" id="contact"  required autofocus></br>
+                
+                                      <label>Arrival Date:- </label> <input style="width: 60%" type="date" name="arrivaldate" id="arrivaldate" required autofocus></br>
+                                      <label>Arrival Time:-</label>  <input style="width: 60%" type="time" name="arrivaltime" id="arrivaltime"  required autofocus></br>
+                                      Select the mode of payment</br>
+                                      cash_on_location<input  type="radio" name="radio" id="radio" value="cash_on_location" required autofocus> 
+                                      Online_payment<input type="radio" name="radio" id="radio" value="Online_payment" required autofocus >
+                                     </br>
+                                      <input type="hidden" name="hiddendata" id="hiddendata" value="<%=type%>" class="form-control" required autofocus></br>
+                                       <button class="btn btn-outline-danger "type="submit" style="margin-left: 10%;width:200px;border-radius:20px;margin-bottom:10px;margin-top: 10px;" id="submit1" name=" button" value="submit" >BOOK_NOW</button>
+    
+                              </form></center>
+                           </div>
+                        </div>
+         
+         </div>
+         </div>
+    </section>
+
+  <%- include("footer") -%>
+ 
+</body>
+</html>

@@ -1,0 +1,736 @@
+<% if(ses.length==5){ %>
+
+  <%- include("header3") -%>
+
+<% } else {%>  
+
+  <%- include("header") -%>
+
+<% } %>
+
+
+
+
+  <section>
+       <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+             
+          <div>
+           <!-- <a href="#" id="a" onclick="admin()">Admin</a> -->
+            <a href="#" id="a"  onclick="customer()">Customer</a>
+            <!--<a href="#" id="a"  onclick="superadmin()">superadmin</a> -->
+            <a href="#" id="a" onclick="employee()">Employee</a>
+          </div>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" >
+            <form id="employeeform" style="text-align:center;" >
+               
+                <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+                 <h5 style="color:red;">Employee Login</h5>
+              </br></br>
+
+              <div class='input-container'>
+                <i class="fa fa-envelope icon"></i>
+                <input id="email1" style="width:100%;" type="email" name="email" class="form-control" placeholder="Your Email" required autofocus>
+               </br>
+               </div>
+
+               <div class='input-container'>
+               <i class="fa fa-key icon"></i>
+                <input id="password1" style="width:100%;" type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+                </div>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="employee"  id="submit2" onclick="emp()">Sign_In</button>
+            </form>
+
+
+            <form id="customerform" style="text-align:center;">
+               
+               <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+               <h5 style="color:red;" >Customer Login</h5>
+               </br></br>
+
+               <div class='input-container'>
+                <i class="fa fa-envelope icon"></i>
+                <input id="email2" type="email" name="email" class="form-control" placeholder="Your Email" required autofocus>
+               </br>
+               </div>
+
+                 <div class='input-container'>
+               <i class="fa fa-key icon"></i>
+                <input id="password2"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+                </div>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="user"  id="submit1" onclick="custm()">Sign_In</button>
+            </form>
+               
+             
+               
+
+       
+           <form id="adminform" style="text-align:center;">
+               <h5 >Admin Login</h5>
+                <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+                </br></br>
+                <input id="email3" type="email" name="email" class="form-control" placeholder="Your Email here" required autofocus>
+               </br>
+                <input id="password3"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+               
+                 <button style="background-color:green;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="admin"  id="submit3" onclick="adm()">Sign_In</button>
+            </form>
+               
+            
+             <form id="superadminform" style="text-align:center;">
+               <h5 >Superadmin  Login</h5>
+               <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+               </br></br>
+                <input id="email4" type="email" name="email" class="form-control" placeholder="Your Email" required autofocus>
+               </br>
+                <input id="password4"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+               
+                 <button style="background-color:green;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="superadmin"  id="submit4" onclick="superadm()">Sign_In</button>
+            </form>
+          
+               
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          
+          <form id="checktable" style="text-align:center;"  method="post" action="/checktable">
+               
+               <img src="q.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+               <h5 style="color:red;font-family:coiny;">CHEK AVAILABILIY </h5>
+               </br></br>
+                <input id="arrivaldate" type="date" name="arrivaldate" class="form-control" placeholder="Your arrival date dd/mm/yyyy" required autofocus></br>
+                <input id="arrivaltime" type="time" name="arrivaltime" class="form-control" placeholder="Your arrival time xx:yy" required autofocus>
+               </br>
+                <select id="menu_options" name="menu_options" class="form-control" >
+                              <option id='dbtable'>Double_Sitter_Table</option>
+                              <option id="fbtable">Four_Sitter_Table</option>
+                               <option id="mbtable">Eight_Sitter_Table</option>
+                             </select>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="tablebook"  id="submit9" onclick="checktable()">Check_Satus</button>
+            </form>
+
+
+
+
+
+
+
+
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+<div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          
+          <form id="checkroom"   method="post" action="/checkroom" >
+               
+              <center> <img src="q.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;"></center>
+               <h5 style="color:red;font-family:coiny;text-align:center">CHEK AVAILABILIY </h5>
+               </br></br>
+               <label style="font-style:italic;">Enter the arrival date</label>
+                <input id="arrivaldate2" type="date" name="arrivaldate2" class="form-control"  " required autofocus>
+                
+               </br>
+               <label style="font-style:italic;">Enter the departure date</label>
+                <input id="departuredate2" type="date" name="departuredate2" class="form-control"  " required autofocus></br>
+                           <select name="menu_options1" id="menu_options1" class="form-control" >
+                              <option id='dbroomac'>double_bed_ac</option>
+                              <option id="sbroomac">single_bed_ac</option>
+                               <option id="fbroomac">four_bed_ac</option>
+                               <option id='dbroomnonac'>double_bed_nonac</option>
+                               <option id="sbroomnonac">single_bed_nonac</option>
+                               <option id="fbroomnonac">four_bed_nonac</option>
+                             </select>
+                             </br>
+
+
+                             <select name="menu_options2" id="menu_options2" class="form-control" >
+                              <option id='dayshift'>Day Shift</option>
+                              <option id="nightshift">Night Shift</option>
+                              
+                             </select>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="roombook"  id="submit10" onclick="checkroom()">Check_Satus</button>
+            </form>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+   
+
+   <div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          
+          <form id="checkroyalroom" style="text-align:center;">
+               
+               <img src="q.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+               <h5 style="color:red;font-family:coiny;">CHEK AVAILABILIY </h5>
+               </br></br>
+                <input id="arrivaldate3" type="date" name="arivaldate3" class="form-control" placeholder="Your arrival date dd/mm/yyyy" required autofocus>
+                
+               </br>
+                <select name="menu_options3" id="menu_options3" class="form-control" >
+                              <option id='royalroom1'>Royal Room1</option>
+                              <option id="royalroom2">Royal Room2</option>
+                               
+                             </select></br>
+
+                              <select name="menu_options4" id="menu_options4" class="form-control" >
+                              <option id='dayshift2'>Day Shift</option>
+                              <option id="nightshift2">Night Shift</option>
+                              
+                             </select>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="roombook"  id="submit11" onclick="checkroyalroom()">Check_Satus</button>
+            </form>
+
+
+
+
+
+
+
+
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+   <div class="modal show" id="myModal2"  >
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+             
+           
+           <div >
+              <h4 style="text-align: center;color:red;font-family: cursive;">Sign_Up Now</h4>
+           </div>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body" >
+              <form id="r" style="text-align: center;">
+                 <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+                 <p id="demo" style="color:red;text-align: center;"></p>
+               </br></br>
+
+               <div class="input-container">
+               <i class="fa fa-user icon"></i>
+               <input id="fullname" type="text" name="fullname" class="form-control" placeholder="Your fullname" required autofocus>
+               </br>
+               </div>
+
+                <div class="input-container">
+                <i class="fa fa-address-book icon"></i>
+               <input id="address" type="text" name="address" class="form-control" placeholder="Your address" required autofocus>
+               </br>
+               </div>
+   
+
+                <div class='input-container'>
+                <i class='fas fa-phone icon'></i>
+               <input id="contact" type="text" name="contact" class="form-control" placeholder="Your contact no plz" required autofocus>
+               </br>
+               </div>
+
+
+               <div class='input-container'>
+               <i class="fa fa-envelope icon"></i>
+               <input id="email" type="email" name="email" class="form-control" placeholder="Your email plz" required autofocus>
+               </br>
+               </div>
+
+
+                <div class='input-container'>
+                <i class="fa fa-key icon"></i>
+               <input id="password5"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+              </br>
+              </div>
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="register"  id="submit5"  onclick="register()">Sign_Up</button>
+            
+                </form>
+
+           
+               
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+  
+  
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section style="margin-top: 10px;" class="container-fluid"  style="position: absolute;">
+    
+    <div class="row">
+       <div class="col-lg-8">
+
+         <img src="b1.jpg" class="img-fluid" style="height:400px;">
+       </div>
+
+
+
+
+       <div class="col-lg-4" style="background-color:white;margin-top:10px;">
+         <img src="discount.jpg" class="img-fluid">
+       </div>
+    </div>
+</section>
+
+
+
+   <section style="margin-top: 100px;">
+
+   <div style="color:red;font-weight:bold;font-family:Courier New;font-size:30px;text-align:center;">
+     Types Of Table Avaialable
+   </div>
+   <hr width="55%" color="black">
+
+
+  <div class='container-fluid'  style="margin-top:80px;">
+   <div >
+
+     <div class="row">
+        <div class='col-lg-4'>
+          <center>
+           <div class="card" style="width: 28rem;">
+              <img src="doublesitter.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title" style="text-align: center;">Double Sitter Table</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;"   data-toggle="modal" data-target="#myModal3">Check_availability</a>
+                </div>
+             </div>
+            </center> 
+        </div>
+
+        <div class='col-lg-4'>
+         <center> 
+           <div class="card" style="width: 28rem;">
+              <img src="foursitter.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title">Four Sitter Table</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;" data-toggle="modal" data-target="#myModal3">Check_availability</a>
+                </div>
+             </div>
+            </center> 
+        </div>
+
+     
+        <div class='col-lg-4'>
+         <center> 
+           <div class="card" style="width: 28rem;">
+              <img src="multisitter.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title" style="text-align: center">Multi Sitter Table</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;" data-toggle="modal" data-target="#myModal3">Check_availability</a>
+                </div>
+             </div>
+          </center>
+
+        </div>
+    
+    
+
+     </div>
+      </div>
+
+     </div>
+
+   </section>
+
+
+
+<section style="margin-top:100px;">
+   <div style="color:red;font-weight:bold;font-family:Courier New;font-size:150%;text-align:center;">
+     Types Of Rooms Available
+   </div>
+   <hr width="75%" >
+ <div class="container">
+   <div class="row shadow" style="padding:2% 2%;margin-top:100px;">
+
+     <div class="col-lg-6 ">
+              <div style="color:green;font-family:;font-style:italic"><h5>Super king room </h5></div>
+              <img src="singlebeded2.webp" class="card-img-top shadow" alt="..." ">
+                
+                  
+                <center><a href="#" class="btn btn-outline-danger" style="text-align: center;margin-top:20px;" data-toggle="modal" data-target="#myModal6">Check_availability</a></center>
+            
+      </div>
+    
+
+    <div class="col-lg-6 ">
+             <div style="color:green;font-family:;font-style:italic"><h5>KnightMare room </h5></div>
+                <img src="royal2.jpg" class="card-img-top shadow" alt="...">
+               
+                  
+                <center><a href="#" class="btn btn-outline-danger" style="text-align: center;margin-top:20px;" data-toggle="modal" data-target="#myModal6">Check_availability</a></center>
+
+               
+      </div>
+      
+
+      
+   </div>
+</div>
+</section>
+
+
+   <section style="margin-top: 160px;">
+
+    <div class="container">
+      <div class="container">
+        
+
+                <div class="row">
+                    <div class='col-lg-6'>
+                         <img src="singlebeded.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class='col-lg-6' style="text-align: center;margin-top: 2%;">
+                         <h3 style='font-family: coiny;color:red;'>  Single Beded Room</h3>
+                         <p style='font-family: cursive;color:green;'>FULL AIR CONDITIONED</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY FOOD</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY SERVICES</p>
+                         <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;" data-toggle="modal" data-target="#myModal4">Check_availability</a>
+                    </div>
+                </div>
+                <hr>
+
+
+                <div class="row" style="margin-top: 80px;">
+                    <div class='col-lg-6' style="text-align: center;margin-top: 5%;">
+                         <h3 style='font-family: coiny;color:red;'>  Double Beded Room</h3>
+                         <p style='font-family: cursive;color:green;'>FULL AIR CONDITIONED</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY FOOD</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY SERVICES</p>
+                         <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;" data-toggle="modal" data-target="#myModal4">Check_availability</a>
+                    </div>
+                    <div class='col-lg-6'>
+                        <img src="doublebeded.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <hr>
+
+
+
+                <div class="row" style="margin-top: 80px;">
+                    <div class='col-lg-6'>
+                        <img src="doublebeded2.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class='col-lg-6' style="text-align: center;margin-top: 5%;">
+                         <h3 style='font-family: coiny;color:red;'>  Double Beded Room</h3>
+                         <p style='font-family: cursive;color:green;'>FULL AIR CONDITIONED</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY FOOD</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY SERVICES</p>
+                         <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;" data-toggle="modal" data-target="#myModal4">Check_availability</a>
+                    </div>
+                </div>
+                <hr>
+
+
+                <div class="row" style="margin-top: 80px;">
+                    <div class='col-lg-6' style="text-align: center;margin-top: 5%;">
+                         <h3 style='font-family: coiny;color:red;'> Single Beded Room</h3>
+                         <p style='font-family: cursive;color:green;'>FULL AIR CONDITIONED</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY FOOD</p>
+                         <p style='font-family: cursive;color:green;'>BEST QUALITY SERVICES</p>
+                         <a href="#" class="btn btn-outline-danger" style="text-align: center;margin-left:0%;margin-top:20px;" data-toggle="modal" data-target="#myModal4">Check_availability</a>
+                    </div>
+                    <div class='col-lg-6'>
+                        <img src="singlebeded2.webp" class="card-img-top" alt="...">
+                    </div>
+                </div>
+ 
+    </div>
+    </div>
+     
+   </section>
+
+
+
+
+
+<script>
+  function emp(){
+        email=$("#email1").val();
+         pass=$("#password1").val();
+        
+        /*
+        * Perform some validation here.
+        */
+        $.post("/employeelogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/employeeview";
+            }
+            else if(data==='wrong')
+            {
+              alert('wrong password');
+            }
+            else if(data==='verify')
+            {
+              window.location.href="/firstverify";
+            }
+        });
+   }
+
+
+  function custm(){
+        email=$("#email2").val();
+         pass=$("#password2").val();
+        
+        /*
+        * Perform some validation here.
+        */
+        $.post("/customerlogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/bookingpage";
+            }
+            else if(data==='wrong')
+            {
+              res.send("wrong password");
+            }
+            else if(data==='verify'){
+              window.location.href="/firstverify";
+             
+            }
+        });
+   }
+ 
+
+  
+
+
+
+
+ function register(event){
+         email=$("#email").val();
+         pass=$("#password5").val();
+         fullname=$("#fullname").val();
+         address=$("#address").val();
+         contact=$("#contact").val();
+
+           var regex = /^[A-Za-z0-9 ]+$/
+            if(pass.length<8)
+            {
+              alert('your password should be 8 characters');
+              return false;
+            }
+
+             if (isNaN(contact) || contact.length <10) 
+                {
+                  alert('its not a valid contact');
+                  return false;
+                }
+
+                if(!regex.test(fullname))
+                {
+                  alert('name  should not have special character');
+                  return false;
+                }
+
+        $.post("/customerregister",{email:email,password:pass,address:address,fullname:fullname,contact:contact},function(data){
+            if(data==='no') {
+            alert('this email has already been  taken')
+             document.getElementById("demo").innerHTML="sjsflslf";
+
+            }  
+            else if(data==='empty')
+            {
+              //document.getElementById("demo").innerHTML="some fields are empth";
+              //alert('some fields are empty');
+            }
+            else if(data==='home')
+            {
+              window.location.href="/success";
+            }
+            else if(data==='error')
+            {
+              window.location.href="/error";
+            }
+            else if(data==='save')
+            {
+             window.location.href="/success";
+            }
+        });
+
+}
+
+   
+  
+
+   
+
+
+   
+
+
+
+
+   document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("superadminform").style.display="none";
+   
+   function customer()
+   {  document.getElementById("customerform").style.display="block";
+      document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("superadminform").style.display="none";
+   }
+   
+   function admin()
+   {
+    document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="block";
+   document.getElementById("superadminform").style.display="none";
+   document.getElementById("customerform").style.display="none";
+   }
+   
+    function superadmin()
+   {
+    document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("superadminform").style.display="block";
+   document.getElementById("customerform").style.display="none";
+   }
+   
+   
+    function employee()
+   {
+    document.getElementById("customerform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("employeeform").style.display="block";
+   document.getElementById("superadminform").style.display="none";
+   }
+
+</script>
+
+
+
+</body>
+
+</html>
+

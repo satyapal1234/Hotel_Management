@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>ht_tr</title>
+     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styleadmin.css">
+
+    <style>
+       
+  .table_wrapper{
+    display: block;
+  
+    white-space: nowrap;
+}
+    </style>
+  </head>
+
+<body>
+   
+   <section style="background-color: black;color:white;">
+    <div class="row">
+      <div class="col-lg-6">
+      </div>
+
+      <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-2">Map
+            </div>
+            <div class="col-lg-2">Location
+            </div>
+            <div class="col-lg-2">Tenders
+            </div>
+            <div class="col-lg-2">jobs
+            </div>
+            <div class="col-lg-2">Webmail
+            </div>
+            <div class="col-lg-2">employees
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section  >
+    <p id="d"></p>
+  <div class="row">
+     <div class="col-lg-6" style="padding: 1% 5%;font-weight: bold;color:green;font-size:30px;font-style: italic;">Hotel_Tourism
+     </div>
+
+      <div class="col-lg-6"  style="padding: 1% 12%;font-weight: bold;color:green;font-size:30px;font-style: italic;">
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+     </div>
+
+  </div> 
+     
+  </section>
+
+
+
+
+ <section id="top-nav" >
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(77, 148, 255);padding:2% 7%" >
+  <a class="navbar-brand" href="/admin" style="font-family: georgia;color:white;"> <i class="fa fa-user" style="color:white;border:0.5px solid white;border-radius: 50%;padding: 13% 19%"></i> ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+   
+    </ul>
+    <form class="form-inline my-2 my-lg-0" >
+    <ul class="navbar-nav mr-auto" style="font-weight:bold;font-family:coiny;" >
+      
+      <li id="li" class="nav-item" ><a style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg" onclick="showbookedtable()">Booked_Table</a></li>
+      <li id="li" class="nav-item"><a style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg" onclick="showbookedroom()">Booked_Room </a> </li>
+      <% if(ses.length==6){ %>
+         <li id="li" class="nav-item"><a href="/logout" style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg" >Logout</a> </li>
+
+         <li id="li" class="nav-item"><a style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg"><%= foundlist.fullname %></a> </li>
+
+     <% } %>
+     </ul>
+    </form>
+  </div>
+</nav>
+
+
+<section >
+  
+  <div class="sidebar">
+  <!--<a class="active"  style="background-color: blue;" onclick="showcustomer()">Customerlist</a>-->
+  <a href="#" style="background-color: blue;" onclick="filltable()">Table</a>
+  <a href="#"  onclick="fillmediumclassroom()">Medium level Room</a>
+  <a href="#" onclick="fillupperclassroom()">Upper class room</a>
+  <a href="#" onclick="bookedhall()">Booked Hall</a>
+  <!--<a href="#" onclick="showmanager()">Managerlist</a>-->
+</div>
+
+   <div class="content">
+      <section id="fiiltable">
+          <div class="container" id="table">
+            <div class="container">
+              <div class="container">
+                <div class="container">
+                  <div class="container" style="margin-top: 40px;">
+                      <form class="form-sign-in">
+                         <div style="text-align: center;color:red;font-family: Courier New;font-style: bold;font-size:30px;font-weight: bold;">ADD TABLE</div>
+                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="notfixedcontent">
+                            <strong>Successfully Updated</strong>
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                               </button>
+                         </div>
+                          <hr width="75%" color="bslack">
+                         <label style='font-style:italic;'>No of two sitter table AC</label>
+                         <input class='form-control' type="number" id="nooftwosittertableac" name="twosittertableac" ></br>
+                         <label style='font-style:italic;'>No of  four sitter table AC</label>
+                         <input class='form-control' type="number" id="nooffoursittertableac" name="foursittertableac" ></br>
+                         <label style='font-style:italic;'>No of eight sitter table AC</label>
+                         <input class='form-control' type="number" id="noofeightsittertableac" name="eightsittertableac" ></br>
+
+                         
+                         <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="addtable"  id="submit1">ADD TABLE</button>
+                     </form>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="container" id="mediumclassroom">
+            <div class="container">
+              <div class="container">
+                <div class="container">
+                  <div class="container" style="margin-top: 40px;">
+                     <form class="form-sign-in">
+                        <div style="text-align: center;color:red;font-family: Courier New;font-style: bold;font-size:30px;font-weight: bold;">ADD MEDIUM LEVEL ROOM</div>
+                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="notfixedcontent2">
+                            <strong>Successfully Updated</strong>
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                               </button>
+                         </div>
+                          <hr width="75%" color="bslack">
+
+                        <label style="font-style: italic;">No of single bed ac room</label>
+                        <input class="form-control" type="number" id="noofsinglebedac" name="singlebedac"></br>
+                        <label style="font-style: italic;">No of double bed ac room</label>
+                        <input class="form-control" type="number" id="noofdoublebedac" name="doublebedac"></br>
+                        <label style="font-style: italic;">No of Four bed with ac room</label>
+                        <input class="form-control" type="number" id="nooffourbedac" name="fourbedac"></br>
+                        <label style="font-style: italic;">No of single bed NON-AC</label>
+                        <input class="form-control" type="number" id="noofsinglebednonac" name="singlebednonac"></br>
+                        <label style="font-style: italic;">No of double bed NON-AC</label>
+                        <input class="form-control" type="number" id="noofdoublebednonac" name="doublebednonac"></br>
+                        <label style="font-style: italic;">No of four bed NON-AC</label>
+                        <input class="form-control" type="number" id="nooffourbednonac" name="fourbednonac"></br>
+                        <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="addmediumlevelroom"  id="submit2">ADD  ROOM</button>
+                     </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="container" id="upperclassroom">
+            <div class="container">
+              <div class="container">
+                <div class="container">
+                  <div class="container" style="margin-top:40px;">
+                    <form class='form-sign-in'>
+                      <div style="text-align: center;color:red;font-family: Courier New;font-style: bold;font-size:30px;font-weight: bold;">ADD UPPER LEVEL ROOM</div>
+                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="notfixedcontent3">
+                            Successfully Updated
+                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                               </button>
+                         </div>
+                          <hr width="75%" color="bslack">
+                      <label  style="font-style: italic;">No of Royal Room 1</label>
+                      <input class="form-control" type="number" name="noofroyalroom1" id="noofroyalroom1"></br>
+                      <label  style="font-style: italic;">No of Royal Room 2</label>
+                      <input  class="form-control" type="number" name="noofroyalroom2" id="noofroyalroom2"></br>
+                      <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="addupperlevelroom"  id="submit3">ADD MEDIUM LEVEL ROOM</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+            
+                  <div class='container' style="margin-top:30px;" id="showbookedtable">
+                       <div class="table-responsive">   
+                             
+                           <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                             
+                             
+                               <center>
+                                    <div class="row" >
+
+                                      <div class="col-sm-4"></div>
+
+                                       <div class="col-sm-4" style="color:rgb(0, 0, 102);margin-top: 20px;text-align:center;font-size: 30px;font-family: Courier New;font-weight:bold;">Booked Table</div>
+
+                                       <div class="col-sm-4" style="margin-top:30px;">
+                                          <input id="myInput" type="text" placeholder="Search.." >
+                                          <button style="background-color: lightgreen" type="submit"><i class="fa fa-search"></i></button>
+                                        </div>
+                             
+                                  </div>
+
+                                   <hr width="60%" color="black">
+                               </center>
+                             
+                             
+                             
+                            
+                           
+                             
+                        
+                      <thead style="background-color: rgb(102, 255, 255);" >
+                                 <tr>
+                                  
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">ArrivalDate</th>
+                                  <th scope="col">ArrivalTime</th>
+                                  <th scope="col">Table</th>
+                                   <th scope="col">mode</th>
+                                   <th scope="col">payment_id</th>
+                                   <th scope="col">payment_status</th>
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist1.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         
+                                         <td><%=foundlist1[i].fullname %></td>
+                                         <td><%=foundlist1[i].contact %></td>
+                                         <td><%=foundlist1[i].arrivaldate %></td>
+                                         <td><%=foundlist1[i].arrivaltime %></td>
+                                        <td><%=foundlist1[i].typeoftable %></td>
+                                        <td><%=foundlist1[i].mode %></td>
+                                        <td><%=foundlist1[i].payment_id %></td>
+                                        <td><%=foundlist1[i].payment_status %></td>
+                                      </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 <div class='container' style="margin-top:30px;" id="bookedhalllist">
+                       <div class="table-responsive">   
+                             
+                        <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                          <center>
+                             <div  class="row">
+                                <div class="col-lg-4"></div>
+                                
+                                  <div class="col-sm-4" style="color:rgb(0, 0, 102);margin-top: 20px;text-align:center;font-size: 30px;font-family: Courier New;font-weight:bold;">Booked Hall</div>
+
+                                   <div class="col-sm-4" style="margin-top:30px;">
+                                          <input id="myInput" type="text" placeholder="Search.." >
+                                          <button style="background-color: lightgreen" type="submit"><i class="fa fa-search"></i></button>
+                                   </div>
+
+                                
+                             </div>
+                              <hr width="60%" color="black">
+                          </center>
+                             
+                        
+                      <thead style="background-color: rgb(102, 255, 255);" >
+                                 <tr>
+                                  
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Address</th>
+                                  <th scope="col">Booking Date</th>
+                                  <th scope="col">Email</th>
+                                   <th scope="col">HallName</th>
+                                   <th scope="col">Payment Id</th>
+                                   <th scope="col">Payment Status</th>
+                                   
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist3.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         
+                                         <td><%=foundlist3[i].fullname %></td>
+                                         <td><%=foundlist3[i].contact %></td>
+                                         <td><%=foundlist3[i].address %></td>
+                                         <td><%=foundlist3[i].dateofbook %></td>
+                                        <td><%=foundlist3[i].email %></td>
+                                        <td><%=foundlist3[i].hallname %></td>
+                                        <td><%=foundlist3[i].payment_id %></td>
+                                        <td><%=foundlist3[i].payment_status %></td>
+                                       
+                                      </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+                    <div class='container' style="margin-top:30px;" id="showbookedbed">
+                       <div class="table-responsive">   
+                             
+                           <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                            <center>
+                             <div  class="row">
+                               <div class="col-sm-4"></div>
+                              
+                                <div class="col-sm-4" style="color:rgb(0, 0, 102);margin-top: 20px;text-align:center;font-size: 30px;font-family: Courier New;font-weight:bold;">Booked Bed</div>
+                               
+                               <div class="col-sm-4" style="margin-top:30px;">
+                                   <input  id="myInput2" type="text" placeholder="Search.."><button style="background-color: lightgreen" type="submit"><i class="fa fa-search"></i></button>
+                               </div>
+                             </div>
+                               <hr width="60%" color="black">
+                            </center>   
+                        
+                      <thead style="background-color: rgb(102, 255, 255);" >
+                                 <tr>
+                                  
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">ArrivalDate</th>
+                                  <th scope="col">DepartureDate</th>
+                                  <th scope="col">Bed</th>
+                                   <th scope="col">mode</th>
+                                   <th scope="col">payment_id</th>
+                                   <th scope="col">payment_status</th>
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist2.length;i++){ %>
+                                   <tbody id="myTable2">
+                                       <tr>
+                                         
+                                         <td><%=foundlist2[i].fullname %></td>
+                                         <td><%=foundlist2[i].contact %></td>
+                                         <td><%=foundlist2[i].arrivaldate %></td>
+                                         <td><%=foundlist2[i].departuredate %></td>
+                                        <td><%=foundlist2[i].typeofbed %></td>
+                                        <td><%=foundlist2[i].mode %></td>
+                                        <td><%=foundlist2[i].payment_id %></td>
+                                        <td><%=foundlist2[i].payment_status %></td>
+                                      </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                   </div>
+                 </div>
+
+                  
+               
+      </section>
+
+
+
+      <section style="margin-top: 30px;">
+          <div class="container">
+            <div style="font-family: coiny;color:red;"><h4>GENERATE E BILL</h4></div> 
+            <div class="row">
+              <div class="col-lg-8">
+              
+                 <div class="two">
+                    <button class="name" onclick="textBoxCreate()">add new item</button>
+                                    </div>
+                
+                  <form action="/ebilling" id="mainform" method="post" name="mainform">
+                     <table class="table">
+                       <thead>
+                         <tr>
+                          
+                           <th scope="col">Item Name</th>
+                           <th scope="col">Quantity</th>
+                         </tr>
+                       </thead>
+                     </table>
+                     
+                     <div class="row">
+                         <div class="col-lg-6" id="form1">
+                         </div>
+                        <div class="col-lg-6"  id="form2">
+                        </div> 
+                    </div></br>
+                   
+                     <input type="submit" value="Print_Bill" class="btn btn-danger" style="border-radius:20px;">
+                     <input type="reset" value="Reset" class="btn btn-success" style="border-radius:20px;">
+                     
+                  </form> 
+               
+             </div>
+
+
+             <div class="col-lg-4">
+               <img src="dis.png" class='img-fluid'>
+             </div>
+            </div>
+          </div>
+      </section>
+
+   </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+var i = 1; // Global Variable for Name
+var j = 1; // Global Variable for E-mail
+/*
+=================
+Creating Text Box for name field in the Form.
+=================
+*/
+function textBoxCreate(){
+
+  
+
+
+
+ var select = document.createElement("select");
+  select.setAttribute("class", "form-control");
+  var items = ["pizza","margherita","buona","chicken_balty","chicken_krahi","pulaw","dal","softdrink"];
+  select.setAttribute("Name", "Name_1" );
+  items.forEach(function(item) {
+    var option = document.createElement("option");
+    option.text = item;
+    select.add(option);
+  });
+
+
+
+//document.getElementById("form1").appendChild(r);
+
+//var y = document.createElement("INPUT");
+var z = document.createElement("INPUT");
+//y.setAttribute("type", "text");
+//y.setAttribute("class", "form-control");
+//y.setAttribute("Placeholder", "Name_" + i);
+//y.setAttribute("Name", "Name_" + i);
+//y.setAttribute("required", "");
+z.setAttribute("type", "text");
+z.setAttribute("class", "form-control");
+z.setAttribute("Placeholder", "Quantity_2");
+z.setAttribute("Name", "Name_2" );
+z.setAttribute("required", "");
+document.getElementById("form1").appendChild(select);
+document.getElementById("form2").appendChild(z);
+
+i++;
+}
+/*
+=================
+Creating Text Box for email field in the Form.
+=================
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+
+   $("#myInput2").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable2 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+  $(document).ready(function(){
+     $('#notfixedcontent3').hide();
+    var noofroyalroom1,noofroyalroom2;
+    $('#submit3').click(function(){
+       noofroyalroom1=$('#noofroyalroom1').val();
+       noofroyalroom2=$('#noofroyalroom2').val();
+
+        if(noofroyalroom1<0||noofroyalroom2<0)
+        {
+          alert('sorry table data cannot be negative');
+          return false;
+        }
+
+        $.post('/royalbedroom',{noofroyalroom1:noofroyalroom1,noofroyalroom2:noofroyalroom2},function(data)
+        {
+           if(data==='done')
+           {
+            $('#notfixedcontent2').show();
+            return false;
+           }
+           if(data==='error')
+           {
+             alert('some errro occured retry after some time');
+           }
+        })
+        return false;
+    })
+  })
+
+
+
+
+   $(document).ready(function(){
+    $('#notfixedcontent2').hide();
+    var noofsinglebedac,noofdoublebedac,nooffourbedac,noofsinglebednonac,noofdoublebednonac,nooffourbednonac;
+    
+      $('#submit2').click(function(){
+          noofsinglebedac=$("#noofsinglebedac").val();
+          noofdoublebedac=$("#noofdoublebedac").val();
+          nooffourbedac=$("#nooffourbedac").val();
+          noofsinglebednonac=$("#noofsinglebednonac").val();
+          noofdoublebednonac=$("#noofdoublebednonac").val();
+          nooffourbednonac=$('#nooffourbednonac').val();
+
+          if(noofsinglebedac<0||noofdoublebedac<0||nooffourbedac<0||noofsinglebednonac<0||noofdoublebednonac<0||nooffourbednonac<0)
+          {
+            alert("sorry table data cannot be negative")
+           return false;
+          }
+
+          $.post('/addbed',{noofsinglebedac:noofsinglebedac,noofdoublebedac:noofdoublebedac,
+            nooffourbedac:nooffourbedac,noofsinglebednonac:noofsinglebednonac,noofdoublebednonac:noofdoublebednonac,nooffourbednonac:nooffourbednonac},function(data){
+              if(data==='done')
+              {
+                $('#notfixedcontent2').show();
+                return false;
+              }
+               if(data==='error')
+              {
+                alert('some errro occured retry after some time');
+              }
+          })
+          return false;
+
+      })
+   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+   $(document).ready(function(){
+     $('#notfixedcontent').hide();
+     
+    var nooftwosittertableac,nooffoursittertableac,noofeightsittertableac,nooftwosittertablenonac,nooffoursittertablenonac,noofeightsittertablenonac;
+    $("#submit1").click(function(){
+       nooftwosittertableac=$("#nooftwosittertableac").val();
+       nooffoursittertableac=$("#nooffoursittertableac").val();
+       noofeightsittertableac=$("#noofeightsittertableac").val();
+      
+       if(nooftwosittertableac<0||nooffoursittertableac<0||noofeightsittertableac<0)
+       {
+        alert("sorry table data cannot be negative")
+        return false;
+       }
+
+       $.post('/addtable',{nooftwosittertableac:nooftwosittertableac,nooffoursittertableac:nooffoursittertableac,noofeightsittertableac:noofeightsittertableac},function(data)
+       {
+           if(data==='done')
+           {
+              $('#notfixedcontent').show();
+              return false;
+           }
+           if(data==='error')
+              {
+                alert('some errro occured retry after some time');
+              }
+       })
+       return false;
+
+    })
+
+    })
+
+   document.getElementById("table").style.display="none";
+   document.getElementById("mediumclassroom").style.display="none";
+   document.getElementById("upperclassroom").style.display="none";
+   document.getElementById("showbookedtable").style.display="none";
+   document.getElementById("showbookedbed").style.display="none";
+   document.getElementById("bookedhalllist").style.display="none";
+
+
+      function bookedhall()
+      {
+        document.getElementById("bookedhalllist").style.display="block";
+        document.getElementById("table").style.display="none";
+       document.getElementById("mediumclassroom").style.display="none";
+       document.getElementById("upperclassroom").style.display="none";
+       document.getElementById("showbookedtable").style.display="none";
+       document.getElementById("showbookedbed").style.display="none";
+      }
+
+      function showbookedroom()
+      {
+        document.getElementById("showbookedbed").style.display="block";
+         document.getElementById("table").style.display="none";
+         document.getElementById("mediumclassroom").style.display="none";
+         document.getElementById("upperclassroom").style.display="none";
+         document.getElementById("showbookedtable").style.display="none";
+         document.getElementById("bookedhalllist").style.display="none";
+
+      }
+
+     function showbookedtable(){
+      document.getElementById("showbookedtable").style.display="block";
+      document.getElementById("table").style.display="none";
+      document.getElementById("mediumclassroom").style.display="none";
+      document.getElementById("upperclassroom").style.display="none";
+      document.getElementById("showbookedbed").style.display="none";
+      document.getElementById("bookedhalllist").style.display="none";
+
+      
+     }
+    
+    function filltable(){
+      document.getElementById("table").style.display="block";
+      document.getElementById("mediumclassroom").style.display="none";
+      document.getElementById("upperclassroom").style.display="none";
+      document.getElementById("showbookedtable").style.display="none";
+      document.getElementById("showbookedbed").style.display="none";
+      document.getElementById("bookedhalllist").style.display="none";
+
+    }
+
+    function fillmediumclassroom()
+    {
+      document.getElementById("table").style.display="none";
+      document.getElementById("mediumclassroom").style.display="block";
+      document.getElementById("upperclassroom").style.display="none";
+      document.getElementById("showbookedtable").style.display="none";
+      document.getElementById("showbookedbed").style.display="none";
+      document.getElementById("bookedhalllist").style.display="none";
+
+    }
+
+    function  fillupperclassroom()
+    {
+      document.getElementById("table").style.display="none";
+      document.getElementById("mediumclassroom").style.display="none";
+      document.getElementById("upperclassroom").style.display="block";
+      document.getElementById("showbookedtable").style.display="none";
+      document.getElementById("showbookedbed").style.display="none";
+      document.getElementById("bookedhalllist").style.display="none";
+
+    }
+</script>
+</body>
+</html>

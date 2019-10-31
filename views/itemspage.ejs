@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>ht_tr</title>
+     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+       
+  
+
+   #abc
+   {
+    background-image: url("item1.jpeg");
+    height: 300px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   }
+
+ 
+  .image1 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgb(102, 255, 255);
+}
+
+.cont:hover .overlay1 {
+  opacity: 0.8;
+}
+
+.text1 {
+  color: black;
+  font-weight: bold;
+  font-family: timesRoman;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 25px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 25px;
+  color: red;
+}
+
+
+
+    </style>
+  </head>
+
+<body >
+  
+
+
+<section  id="abc">
+       <h4 style='font-family: coiny;color:white;text-align: center;padding: 8% 0%' class='display-4'>Welcome to Gallery Section</h4>
+    
+</section>
+
+
+<section style="margin-top:30px;">
+
+    <div  style="text-align: center;font-family: coiny;" class="head">Choose & Enjoy
+    </div>
+   </br></br>
+   <div class="container">
+    <div  style="font-style:italic;font-weight:bold;color:brown;font-family: georgia"><h4>Rooms In Hotel</h4></div>
+    <div class="row">
+      
+       <div class="col-lg-4">
+         <center>
+          <img id="igx" src="item2.jpg" class='img-fluid'></br></br>
+          <a class="btn btn-outline-danger" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+        </center>
+
+       </div>
+
+       <div class="col-lg-4" >
+         <center><img id="igx" src="item3.jpg" class='img-fluid'></br></br>
+          <a class="btn btn-outline-danger" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+       </div>
+       
+       <div class="col-lg-4" >
+         <center><img id="igx" src="item4.jpeg" class='img-fluid'></br></br>
+          <a class="btn btn-outline-danger" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+       </div>
+     
+    </div>
+  </div>
+</section>
+
+
+<section style="margin-top:30px;background-color: rgb(204, 255, 255);padding: 5% 7%">
+  
+   <div class="row">
+      <div class="col-lg-6">
+          <center>
+              <div class="cont">
+                 <img src="item5.jpg" alt="Avatar" class="image1">
+                    <div class="overlay1">
+                     <div class="text1">Get Nice Swimming Facility 24*7</div>
+                     </div>
+              </div>
+               
+          </center>
+      </div> 
+ 
+
+      <div class="col-lg-6">
+          <center>
+             <div class="cont">
+                 <img src="item6.jpg" alt="Avatar" class="image1">
+                    <div class="overlay1">
+                     <div class="text1">Get Nice Parking Facility 24*7</div>
+                     </div>
+              </div>
+          </center>
+      </div>  
+  </div>
+
+ 
+</section>
+
+
+<section  style="margin-top:50px;">
+   <div class="container">
+     <div  style="font-style:italic;font-weight:bold;color:brown;font-family: georgia"><h4>Tables In Hotel</h4></div>
+      <div class="row">
+          <div class="col-lg-3">
+            <center>
+               <div class="spinner-grow text-muted"></div>
+               <div class="spinner-grow text-primary"></div>
+              <img src="item10.jpg" alt="..." class="img-thumbnail"></br></br>
+              <a class="btn btn-outline-success" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+            </center>
+          </div>
+
+          <div class="col-lg-3">
+            <center>
+                 <div class="spinner-grow text-success"></div>
+                  <div class="spinner-grow text-info"></div>
+              <img src="item7.jpg" alt="..." class="img-thumbnail"></br></br>
+              <a class="btn btn-outline-success" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+            </center>
+          </div>
+
+          <div class="col-lg-3">
+            <center>
+              <div class="spinner-grow text-warning"></div>
+              <div class="spinner-grow text-danger"></div>
+              <img src="item11.jpg" alt="..." class="img-thumbnail"></br></br>
+              <a class="btn btn-outline-success" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+            </center>
+          </div>
+
+          <div class="col-lg-3">
+            <center>
+                <div class="spinner-grow text-secondary"></div>
+                <div class="spinner-grow text-dark"></div>
+                <img src="item9.jpeg" alt="..." class="img-thumbnail"></br></br>
+                <a class="btn btn-outline-success" style="padding: 2% 5%;border-radius: 20px;">see details</a></center>
+            </center>
+          </div>
+      </div>
+   </div>
+</section>
+
+
+<section style="background-color:rgb(224, 255, 255);padding:2% 10%;">
+  <div id="stories_from_guest" style="text-align:center;"><img src="coma.png" style="height:30px;width:50px;"></div></br>
+  <div id="stories_from_guest" style="text-align:center;font-family:coiny;"><h4> Reviews From Our Customers</h4></div></br>
+   <div id="testimonial-carousel" class="carousel slide" data-ride="false" data>
+          <div class="carousel-inner">
+             <div class="carousel-item active">
+                  
+                 <center>
+                 <p style="color:gray;">It is great exprerience to spend a night at the Hotel Grand Akarshak.The mess staff are very timely and providing first class of service as well as envrionment of Hotel Grand Akarshak is admirable</p>
+                 <img class="guest1-image" src="guest1.jpg" alt="dog-profile" style="width:100px;height:100px;border-radius:50%;"></center>
+                 
+             </div>
+
+
+              <div class="carousel-item ">
+                 <center>
+                 <p style="color:gray;">It is great exprerience to spend a night at the Hotel Grand Akarshak.The mess staff are very timely and providing first class of service as well as envrionment of Hotel Grand Akarshak is admirable</p>
+                 <img class="guest1-image" src="guest2.jpg" alt="dog-profile" style="width:100pxs;height:100px;border-radius:50%;"></center>
+             </div>
+        </div>
+
+             <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                 <span style="background-color:gray;border-radius:50%;height:50px;width:50px;margin-top:70px;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+             </a>
+
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="  next">
+                  <span style="background-color:gray;border-radius:50%;height:50px;width:50px;margin-top:70px;" class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+   </div>
+</section>
+ 
+
+</body>
+</html>

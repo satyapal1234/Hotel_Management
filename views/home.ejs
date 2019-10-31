@@ -1,0 +1,862 @@
+<% if(ses.length==5){ %>
+
+  <%- include("header3") -%>
+
+<% } else {%>  
+
+  <%- include("header") -%>
+
+<% } %>
+
+<style>
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 25px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 25px;
+  color: red;
+}
+      
+
+#desc
+{
+  font-size:12px;
+}
+
+#work-in-progress {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  font-size: 150px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000000;
+  z-index: 200000;
+  background-color: #FFFFFF;
+
+}
+
+.work-spinner {
+  background-color: rgba(0,0,0,0);
+  border: 9px solid rgba(27,61,226,0.9);
+  opacity: .9;
+  border-left: 5px solid rgba(0,0,0,0);
+  border-radius: 120px;
+  -webkit-box-shadow: 0 0 35px #1B3DE2;
+  box-shadow: 0 0 35px #1B3DE2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top:300px;
+
+  -moz-animation: spin .5s infinite linear;
+  -webkit-animation: spin .5s infinite linear;
+  -o-animation: spin .5s infinite linear;
+  animation: spin .5s infinite linear;
+}
+
+@-moz-keyframes spin {
+ from {
+     -moz-transform: rotate(0deg);
+ }
+ to {
+     -moz-transform: rotate(360deg);
+ }
+}
+
+@-webkit-keyframes spin {
+ from {
+     -webkit-transform: rotate(0deg);
+ }
+ to {
+     -webkit-transform: rotate(360deg);
+ }
+}
+
+@keyframes spin {
+ from {
+     transform: rotate(0deg);
+ }
+ to {
+     transform: rotate(360deg);
+ }
+}
+@-o-keyframes spin {
+ from {
+     transform: rotate(0deg);
+ }
+ to {
+     transform: rotate(360deg);
+ }
+}
+
+
+#work-in-progress {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  font-size: 150px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000000;
+  z-index: 200000;
+  background-color: #FFFFFF;
+
+}
+
+.work-spinner {
+  background-color: rgba(0,0,0,0);
+  border: 9px solid rgba(27,61,226,0.9);
+  opacity: .9;
+  border-left: 5px solid rgba(0,0,0,0);
+  border-radius: 120px;
+  -webkit-box-shadow: 0 0 35px #1B3DE2;
+  box-shadow: 0 0 35px #1B3DE2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top:300px;
+
+  -moz-animation: spin .5s infinite linear;
+  -webkit-animation: spin .5s infinite linear;
+  -o-animation: spin .5s infinite linear;
+  animation: spin .5s infinite linear;
+}
+
+@-moz-keyframes spin {
+ from {
+     -moz-transform: rotate(0deg);
+ }
+ to {
+     -moz-transform: rotate(360deg);
+ }
+}
+
+@-webkit-keyframes spin {
+ from {
+     -webkit-transform: rotate(0deg);
+ }
+ to {
+     -webkit-transform: rotate(360deg);
+ }
+}
+
+@keyframes spin {
+ from {
+     transform: rotate(0deg);
+ }
+ to {
+     transform: rotate(360deg);
+ }
+}
+@-o-keyframes spin {
+ from {
+     transform: rotate(0deg);
+ }
+ to {
+     transform: rotate(360deg);
+ }
+}
+</style>
+    
+   
+    <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+             
+          <div>
+           <!-- <a href="#" id="a" onclick="admin()">Admin</a> -->
+            <a href="#" id="a"  onclick="customer()">Customer</a>
+            <!--<a href="#" id="a"  onclick="superadmin()">superadmin</a> -->
+            <a href="#" id="a" onclick="employee()">Employee</a>
+          </div>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" >
+            <form id="employeeform" style="text-align:center;" >
+               
+                <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+                 <h5 style="color:red;" >Employee Login</h5>
+              </br></br>
+
+               <div class="input-container">
+               <i class="fa fa-envelope icon"></i>
+                <input id="email1" type="email" style="width:100%;outline:none" name="email" class="form-control" placeholder="Your Email" required autofocus>
+               </br>
+               </div>
+
+               <div class="input-container">
+               <i class="fa fa-key icon"></i>
+                <input id="password1"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+                </div>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="employee"  id="submit2" onclick="emp()">Sign_In</button>
+            </form>
+
+
+            <form id="customerform" style="text-align:center;">
+               
+               <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+               <h5 style="color:red;">Customer Login</h5>
+               </br></br>
+
+               <div class="input-container">
+               <i class="fa fa-envelope icon"></i>
+                <input id="email2" type="email" name="email" style="width:100%;outline:none;" class="input-field" placeholder="Your Email" required autofocus>
+               </br>
+               </div>
+                
+               <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input id="password2"  type="password" style="width:100%;outline:none;" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+                </div>
+               
+                 <button style="background-color:red;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="user"  id="submit1" onclick="custm()">Sign_In</button>
+            </form>
+               
+             
+               
+
+       
+           <form id="adminform" style="text-align:center;">
+               <h5 >Admin Login</h5>
+                <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+                </br></br>
+                <input id="email3" type="email" name="email" class="form-control" placeholder="Your Email here" required autofocus>
+               </br>
+                <input id="password3"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+               
+                 <button style="background-color:green;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="admin"  id="submit3" onclick="adm()">Sign_In</button>
+            </form>
+               
+            
+             <form id="superadminform" style="text-align:center;">
+               <h5 >Superadmin  Login</h5>
+               <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+               </br></br>
+                
+                <div class='input-containrer'>
+                 <i class="fa fa-envelope icon"></i>
+                <input id="email4" type="email" name="email" style="width:100%;outline:none;"class="form-control" placeholder="Your Email" required autofocus>
+               </br>
+               </div>
+
+                <input id="password4"  type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
+               
+                 <button style="background-color:green;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="superadmin"  id="submit4" onclick="superadm()">Sign_In</button>
+            </form>
+          
+               
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="modal show" id="myModal2"  >
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+             
+           
+           <div >
+              <h4 style="text-align: center;color:red;font-family: cursive;">Sign_Up Now</h4>
+           </div>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body" >
+              <form id="r" style="text-align: center;">
+                 <img src="2.jpg" style="height:100px;width: 100px;border-radius: 50%;border-color: 2px solid black;">
+                 <p id="demo" style="color:red;text-align: center;"></p>
+               </br></br>
+              
+             <div class="input-container">
+               <i class="fa fa-user icon"></i>
+               <input id="fullname" type="text" name="fullname" class=" input-field " style="width:100%;outline:none;" placeholder="Your fullname" required autofocus>
+               </br></br>
+
+              </div>
+
+              <div class="input-container">
+                <i class="fa fa-address-book icon"></i>
+               <input id="address" type="text" name="address" class="input-field" style="width:100%;outline:none;" placeholder="Your address" required autofocus>
+               </br>
+               </div>
+
+               <div class='input-container'>
+                <i class='fas fa-phone icon'></i>
+               <input id="contact" type="text" name="contact" style="width:100%;outline:none;" class="input-field" placeholder="Your contact no plz" required autofocus>
+               </br>
+               </div>
+               
+               <div class='input-container'>
+               <i class="fa fa-envelope icon"></i>
+               <input id="email" type="email" name="email" class="input-field" style="width:100%;outline:none;" placeholder="Your email plz" required autofocus>
+               </br>
+               </div>
+                
+                <div class='input-container'>
+                <i class="fa fa-key icon"></i>
+               <input id="password5"  type="password" name="password" style="width:100%;outline:none;" class="input-field" placeholder="Enter Password" required autofocus>
+              </br>
+              </div>
+                 <button  class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="register"  id="submit5"  onclick="register()">Sign_Up</button>
+            
+                </form>
+
+           
+               
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+ <!-- The Modal -->
+  <div class="modal fade" id="myModal3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+          
+
+
+
+
+
+   
+
+
+ </section> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      
+ <section  id="carousel_section"  >
+           
+      <div class="row" style="background-color:rgb(255, 242, 230);" >
+         <div class="col-lg-8" >
+            <img src="post2.jpg" alt="Los Angeles" class="img-fluid" >
+         </div>
+         
+         <div class="col-lg-4" style='background-color:rgb(255, 242, 230);'>
+                 <div style="padding:10px 0px;margin:30px">
+                 <center><div style='font-family:serif;font-size:24px;'>Search By place</div></center>
+                  <form class="form-signin" method="post" action="/searchbyplace">
+                      <label>Check In Date</label>
+                      <input type="date" id="checkindate" name="checkindate" value="checkindate" class="form-control" required autofocus>
+               
+                      <label>Check Out Date</label>
+                      <input type="date" id="checkoutdate" name="checkoutdate" value="checkoutdate" class="form-control" required autofocus>
+      
+    
+                      <label>Enter the prefered location</label></br>
+                        <select class="form-control" id="select_menu" name="select_menu" required autofocus>
+                           <option value="varanasi">Varanasi</option>
+                           <option value="patna">Patna</option>
+                           <option value="ranchi">Ranchi</option>
+                       </select>
+    
+                       </br>
+                      <button type="submit"  class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="searchbyplace">Search</button>
+    
+                 </form>
+                 </div>
+
+           
+         </div>   
+      </div>   
+            
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section style="margin-top:120px;" class="container-fluid">
+  <div class="row" style="padding:2% 5%">
+    <div class="col-lg-4">
+      <img src="lapi.jpg" class="img-fluid">
+    </div>
+
+     <div class="col-lg-8" style="margin-top:3%;">
+       <h3 style="font-style:italic;font-family:georgia;color:blue;margin-left:40px;">Book From Every Place in Few second only</h3>
+
+       <div style="padding:2% 15%;color:  rgb(255, 51, 51);font-style:italic">
+         <h5>Easy Access to food services as well as transport</h5>
+         <h5>Book Any Hotel across India at home only</h5>
+         <h3 style="margin-top:20px;color:blue;font-style:italic;font-family"cursive;>We Serve the Best</h3>
+         <h6></h6>
+       </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<section style="margin-top:150px;" class="container">
+<div class="animated4" style="font-family:Courier New;font-weight:bold;text-align:center;font-size:30px;color:rgb(0, 51, 0);">Most Visted This Summer</div>
+<hr width="75%" color="black">
+ <div class="row" style="margin-top:60px;">
+   <div class="col-lg-2">
+     <img src="pondi.jpg" class="img-thumbnail" style="border-radius:5px;">
+     <div style="font-weight:bold;">pondicherry</div>
+     <a href='#' style='text-align:center;'>browse more</a>
+   </div>
+
+   <div class="col-lg-2">
+   <img src="puri.webp" class="img-thumbnail" style="border-radius:5px;">
+   <div style="font-weight:bold;">puri</div>
+     <a href='#' style='text-align:center;'>browse more</a>
+   </div>
+
+   <div class="col-lg-2">
+     <img src="mahabaleswar.webp" class="img-thumbnail" style="border-radius:5px;">
+     <div style="font-weight:bold;">Mahabaleswar</div>
+     <a href='#' style='text-align:center;'>browse more</a>
+   </div>
+
+   <div class="col-lg-2">
+    <img src="jaipur.webp" class="img-thumbnail" style="border-radius:5px;">
+    <div style="font-weight:bold;">Jaipur</div>
+     <a href='#' style='text-align:center;'>browse more</a>
+   </div>
+
+   <div class="col-lg-2">
+     <img src="oty.webp" class="img-thumbnail" style="border-radius:5px;">
+     <div style="font-weight:bold;">Ooty</div>
+     <a href='#' style='text-align:center;'>browse more</a>
+   </div>
+   <div class="col-lg-2">
+     <img src="goa.jpg" class="img-thumbnail" style="border-radius:5px;">
+     <div style="font-weight:bold;">Goa</div>
+     <a href='#' style='text-align:center;'>browse more</a>
+   </div>
+ </div>
+
+</section>
+
+
+
+
+
+
+</br></br></br>
+<section style="padding:3% 7%; margin-top:80px;">
+ <div class="animated4" style="font-family:Courier New;font-weight:bold;text-align:center;font-size:30px;color:rgb(0, 0, 102);">Best Collection For You</div>
+ <hr width="75%" color="black">
+ </br>
+ <div class="container">
+    <div class="row">
+      <div class='col-lg-6'>
+         <img  src="c1.jpg" class='img-fluid animated5 bounceInLeft' id = "animated-example"></br></br>
+         <p style="text-align:center;color:green;font-weight:bold;font-family:coiny;"> HOTEL VARANASI THREE</p>
+         <center><a href="#" class="btn btn-outline-success" style="border-radius:20px;padding:2% 5%">view details</a></center>
+      </div>
+
+      <div class='col-lg-6'>
+         <img  src="c2.jpg" class='img-fluid animated6 bounceInRight'></br></br>
+         <p style="text-align:center;color:green;font-weight:bold;font-family:coiny;"> HOTEL RANCHI TWO</p>
+         <center><a href="#" class="btn btn-outline-success" style="border-radius:20px;padding:2% 5%">view details</a></center>
+      </div>
+    </div>
+ </div>
+</section>
+
+
+
+<section style="margin-top:80px;" class="container">
+   <div class="animated4" style="font-family:Courier New;font-weight:bold;text-align:center;font-size:30px;color:rgb(0, 0, 102);">Features</div>
+<hr width="50%" color="black">
+   <div class="row" style="margin-top:70px;">
+      <div class='col-lg-4 shadow p-3 mb-5 bg-white rounded' >
+            <center>
+            <div class="" style="width: 18rem;padding:0% 5%">
+              <img src="r1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title" style="text-align: center">Swimming pool</h5>
+                  <p class="card-text" style="font-family:timesRoman">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                
+                </div>
+             </div>
+            </center>
+        </div>
+
+
+      <div class='col-lg-4 shadow p-3 mb-5 bg-white rounded'>
+           <div class= style="width: 18rem;padding:0% 5%">
+              <img src="r2.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title" style="text-align: center">Nice surroundiing</h5>
+                  <p class="card-text" style="font-family:timesRoman">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               
+                </div>
+             </div>
+        </div>
+
+
+
+
+      <div class='col-lg-4 shadow p-3 mb-5 bg-white rounded'>
+           <center>
+           <div class="" style="width: 18rem;padding:0% 5%">
+              <img src="r3.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title" style="text-align: center">Parking facility</h5>
+                  <p class="card-text" style="font-family:timesRoman">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               
+                </div>
+             </div>
+        </div>
+         </center>
+
+   </div>
+</section>
+
+
+
+
+
+
+
+
+</br></br>
+<section class="container" style='margin-top:100px;'>
+  <div class="animated4" style="font-family:Courier New;font-weight:bold;text-align:center;font-size:30px;color:red;">Why Grand Akarshak Hotel Only</div>
+   <hr width="75%" color="black"></br>
+   <div class="container" style="margin-top:70px;">
+     <div class="row">
+       <div class='col-lg-3' style="text-align:center;">
+         <img src="pic1.svg"></br></br>
+         <div style="font-family:timesRoman">HIGHLY TRUSTED </div>
+         <p id="desc">More no of customers are interested in booking at this Hotel</p>
+       </div>
+
+       <div class='col-lg-3' style="text-align:center;">
+         <img src="pic2.svg"></br></br>
+         <div style="font-family:timesRoman">TIME TO TIME SERVICE</div>
+         <p id="desc">More no of customers reviews that services are of best quality and very timely</p>
+
+       </div>
+
+       <div class='col-lg-3' style="text-align:center;">
+         <img src="pic3.svg"></br></br>
+         <div style="font-family:timesRoman">CLEAN  ENVIRONMENT</div>
+         <p id="desc">More no of customers reveals that environment are neat and clean</p>
+       </div>
+
+       <div class='col-lg-3' style="text-align:center;">
+          <img src="pic4.svg"></br></br>
+         <div style="font-family:timesRoman">HIGHLY RATED</div>
+         <p id="desc">Rating of this hotel is best among the other hotels present in locality</p>
+       </div>
+
+     </div>
+   </div>
+</section>
+</br></br>
+
+
+
+
+
+
+
+
+<section style="background-color:rgb(224, 224, 235);padding:2% 10%;">
+  <div id="stories_from_guest" style="text-align:center;"><img src="coma.png" style="height:30px;width:50px;"></div></br>
+  <div id="stories_from_guest" style="text-align:center;font-family:coiny;"><h4> Reviews From Our Customers</h4></div></br>
+   <div id="testimonial-carousel" class="carousel slide" data-ride="false" data>
+          <div class="carousel-inner">
+             <div class="carousel-item active">
+                  
+                 <center>
+                 <p style="color:gray;">It is great exprerience to spend a night at the Hotel Grand Akarshak.The mess staff are very timely and providing first class of service as well as envrionment of Hotel Grand Akarshak is admirable</p>
+                 <img class="guest1-image" src="guest1.jpg" alt="dog-profile" style="width:100px;height:100px;border-radius:50%;"></center>
+                 
+             </div>
+
+
+              <div class="carousel-item ">
+                 <center>
+                 <p style="color:gray;">It is great exprerience to spend a night at the Hotel Grand Akarshak.The mess staff are very timely and providing first class of service as well as envrionment of Hotel Grand Akarshak is admirable</p>
+                 <img class="guest1-image" src="guest2.jpg" alt="dog-profile" style="width:100pxs;height:100px;border-radius:50%;"></center>
+             </div>
+        </div>
+
+             <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                 <span style="background-color:gray;border-radius:50%;height:50px;width:50px;margin-top:70px;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+             </a>
+
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="  next">
+                  <span style="background-color:gray;border-radius:50%;height:50px;width:50px;margin-top:70px;" class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+   </div>
+</section>
+
+      <%- include("footer") -%>
+
+
+
+
+<script>
+  function emp(){
+        email=$("#email1").val();
+         pass=$("#password1").val();
+        
+        /*
+        * Perform some validation here.
+        */
+        $.post("/employeelogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/employeeview";
+            }
+            else if(data==='wrong')
+            {
+              alert('wrong password');
+            }
+            else if(data==='verify')
+            {
+              window.location.href="/firstverify";
+            }
+            else if(data==='oops')
+            {
+              alert('no such user exist');
+            }
+        });
+   }
+
+
+  function custm(){
+        email=$("#email2").val();
+         pass=$("#password2").val();
+        
+        /*
+        * Perform some validation here.
+        */
+        $.post("/customerlogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/bookingpage";
+            }
+            else if(data==='wrong')
+            {
+              alert('wrong password');
+            }
+            else if(data==='verify'){
+              window.location.href="/firstverify";
+             
+            }
+
+            else if(data==='oops')
+            {
+              alert('no such user exist');
+            }
+        });
+   }
+ 
+
+  
+
+
+
+
+ function register(event){
+         email=$("#email").val();
+         pass=$("#password5").val();
+         fullname=$("#fullname").val();
+         address=$("#address").val();
+         contact=$("#contact").val();
+
+           var regex = /^[A-Za-z0-9 ]+$/
+            if(pass.length<8)
+            {
+              alert('your password should be 8 characters');
+              return false;
+            }
+
+             if (isNaN(contact) || contact.length <10) 
+                {
+                  alert('its not a valid contact');
+                  return false;
+                }
+
+                if(!regex.test(fullname))
+                {
+                  alert('name  should not have special character');
+                  return false;
+                }
+
+        $.post("/customerregister",{email:email,password:pass,address:address,fullname:fullname,contact:contact},function(data){
+            if(data==='no') {
+            alert('this email has already been  taken')
+             document.getElementById("demo").innerHTML="sjsflslf";
+
+            }  
+            else if(data==='empty')
+            {
+              //document.getElementById("demo").innerHTML="some fields are empth";
+              //alert('some fields are empty');
+            }
+            else if(data==='home')
+            {
+              window.location.href="/success";
+            }
+            else if(data==='error')
+            {
+              alert('eror');
+              window.location.href="/error";
+            }
+            else if(data==='save')
+            {
+             window.location.href="/success";
+            }
+
+        });
+        return false;
+
+}
+
+ 
+  $(window).bind("load", function () {
+        $('#work-in-progress').fadeOut(100);
+    });
+
+   document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("superadminform").style.display="none";
+   
+   function customer()
+   {  document.getElementById("customerform").style.display="block";
+      document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("superadminform").style.display="none";
+   }
+   
+   function admin()
+   {
+    document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="block";
+   document.getElementById("superadminform").style.display="none";
+   document.getElementById("customerform").style.display="none";
+   }
+   
+    function superadmin()
+   {
+    document.getElementById("employeeform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("superadminform").style.display="block";
+   document.getElementById("customerform").style.display="none";
+   }
+   
+   
+    function employee()
+   {
+    document.getElementById("customerform").style.display="none";
+   document.getElementById("adminform").style.display="none";
+   document.getElementById("employeeform").style.display="block";
+   document.getElementById("superadminform").style.display="none";
+   }
+
+</script>
+
+
+  </body>
+
+
+</html>

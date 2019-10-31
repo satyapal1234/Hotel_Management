@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>ht_tr</title>
+     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+<style >
+ .active {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  
+
+  height: 400px;
+}
+
+.over {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgb(0, 0, 153);
+  overflow:hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.active:hover .over {
+  width: 100%;
+}
+
+</style>
+<body>
+ <section style="background-color: black;color:white;">
+    <div class="row">
+      <div class="col-lg-6">
+      </div>
+
+      <div class="col-lg-6">
+          <div class="row">
+            <div class="col-lg-2">Map
+            </div>
+            <div class="col-lg-2">Location
+            </div>
+            <div class="col-lg-2">Tenders
+            </div>
+            <div class="col-lg-2">jobs
+            </div>
+            <div class="col-lg-2">Webmail
+            </div>
+            <div class="col-lg-2">employees
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+ <section  >
+    <p id="d"></p>
+  <div class="row">
+     <div class="col" style="font-family:coiny;padding: 1% 5%;font-weight: bold;color:red;font-size:30px;font-style: italic;">Hotel_Tourism
+     </div>
+      <div class="col"></div>
+      <div class="col"  style="padding: 1% 5%;font-weight: bold;color:green;font-size:15px;font-style: italic;">
+        <form class="form-inline " >
+            <input type="text" placeholder="Search.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+     </div>
+
+  </div> 
+
+
+
+ <section id="top-nav" >
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color:rgb(255, 217, 179);padding:2% 3%" >
+  <a class="navbar-brand" href="/admin" style="font-family: coiny;color:white;">ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+   
+    </ul>
+    <form class="form-inline my-2 my-lg-0" >
+    <ul class="navbar-nav mr-auto" style="font-weight:bold;font-family:coiny;" >
+      <li id="li" class="nav-item" ><a href="/" style="color:white;margin-left:10px;margin-top:2px;" class="btn btn-outline btn-lg" ><i class="fa fa-home"></i> Home </a></li>
+      <li id="li" class="nav-item" ><a href="/HallBook" style="color:white;margin-left:10px;margin-top:2px;" class="btn btn-outline btn-lg"  ><i class="fa fa-home"></i> HallBook </a></li>
+      <li id="li" class="nav-item" ><a href="/contact" style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg"   ><i class='fas fa-phone'></i> Contact </a></li>
+      <li id="li" class="nav-item"><a href="/itemspage" style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg" ><i class="fa fa-book"></i> Items</a></li>
+
+      <% if(ses.length==5){ %>
+
+           <li id="li" class="nav-item" ><a  href='/logout' style="color:white; margin-left:10px;margin-top:2px;" class="btn btn-outline btn-lg" >Logout </a></li>
+          <li id="li" class="nav-item"><a  style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg" ><i class="fa fa-user"></i> <%= nam %> </a> </li>
+
+      <% } else {%>  
+
+           <li id="li" class="nav-item" ><a  style="color:white; margin-left:10px;margin-top:2px;" class="btn btn-outline btn-lg" data-toggle="modal" data-target="#myModal"  ><i class="fa fa-user"></i> Login </a></li>
+         <li id="li" class="nav-item"><a  style="color:white; margin-left:10px;margin-top:2px;"  class="btn btn-outline btn-lg" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user"></i> Register </a> </li>
+
+     <% } %>
+     </ul>
+    </form>
+  </div>
+</nav>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+ <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <!-- Modal Header -->
+        <div class="modal-header" style='background-color: red;'>
+          <h4 class="modal-title" style='font-family: Courier New;font-weight: bold;color:white'>Search For Availability</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <!-- Modal body -->
+        <div class="modal-body">
+           <form action='/searchHallAvailabilityBook' method='post'>
+               <center><input type="date" name="indate" id='indate' required autofocus>
+               <button class='btn btn-primary' type='submit' name='button' value='rajHans' style='margin-left: 40px;background-color: black;color:white;'>Search & Book</button></center>
+           </form>
+        </div>  
+      </div>
+    </div>
+  </div> 
+ </div>
+
+
+
+
+
+
+
+
+
+<div class="modal" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <!-- Modal Header -->
+        <div class="modal-header" style='background-color: red;'>
+          <h4 class="modal-title" style='font-family: Courier New;font-weight: bold;color:white'>Search For Availability</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <!-- Modal body -->
+        <div class="modal-body">
+           <form action='/searchHallAvailabilityBook' method='post'>
+               <center><input type="date" name="indate" id='indate' required autofocus>
+               <button class='btn btn-primary' type='submit' name='button' value='imanlocha' style='margin-left: 40px;background-color: black;color:white;'>Search & Book</button></center>
+           </form>
+        </div>  
+      </div>
+    </div>
+  </div> 
+ </div>
+
+
+
+
+
+
+
+<div class="modal" id="myModal3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <!-- Modal Header -->
+        <div class="modal-header" style='background-color: red;'>
+          <h4 class="modal-title" style='font-family: Courier New;font-weight: bold;color:white'>Search For Availability</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <!-- Modal body -->
+        <div class="modal-body">
+           <form action='/searchHallAvailabilityBook' method='post'>
+               <center><input type="date" name="indate" id='indate' required autofocus>
+               <button class='btn btn-primary' type='submit' name='button' value='stephen' style='margin-left: 40px;background-color: black;color:white;'>Search & Book</button></center>
+           </form>
+        </div>  
+      </div>
+    </div>
+  </div> 
+ </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<section style='margin-top:80px;'>
+        <center><div style='color:red;font-family:Courier New;font-weight: bold;word-spacing: 3px;font-size:30px;';><div style='font-family: Courier New;font-weight: bold;' class="animated4">Auditorium Raj Hans</div><hr width="50%" color="white"></div></center>
+
+
+      <div class="row" style="margin-top: 40px;">
+         <div class="col-lg-6">
+              <center>
+                <div id="carouselExampleControls" class="carousel slide shadow p-3 mb-5 bg-white rounded" data-ride="carousel" style="width:80%; margin:0 auto;padding: 10px 20px ">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" >
+                            <img  src='audi1.jpg'  class='image img-fluid img-responsive' style="height: 300px;" >
+                            <div class="carousel-caption d-none d-md-block over">
+                               <img  src='lgo.jpg' style='width:100px;height:100px;border-radius: 50%;margin-top: 50px;'>
+                               <h4>Per day charge is <span>2000Rs</span></h4></br>
+                               <button  class='btn btn-danger' style='padding:2px 100px;margin-left: 30px;'  data-toggle="modal" data-target="#myModal">see availability & Book</button>
+                            </div>
+
+                        </div>   
+                     </div>
+                      
+                </div>
+              </center></br>
+          </div> 
+          
+
+          <div class="col-lg-6">
+              <center>
+                <div id="carouselExampleControls" class="carousel slide shadow p-3 mb-5 bg-white rounded" data-ride="carousel" style="width:80%; margin:0 auto;padding: 10px 20px ">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" >
+                            <img  src='audi1.jpg' class='image img-fluid img-responsive' style="height: 300px;" >
+                            <div class="carousel-caption d-none d-md-block over">
+                               <img  src='lgo.jpg' style='width:100px;height:100px;border-radius: 50%;margin-top: 50px;'>
+                               <h4>Per day charge is <span>2000Rs</span></h4></br>
+                               <button  class='btn btn-danger' style='padding:2px 100px;margin-left: 30px;'  data-toggle="modal" data-target="#myModal">see availability & Book</button>
+                            </div>
+
+                        </div>   
+                     </div>
+                     
+                </div>
+              </center></br>
+          </div>   
+      </div>
+
+
+   
+
+</section>
+
+
+
+
+
+
+
+
+
+<section style='margin-top:60px;'>
+    <center><div style='color:red;font-family:coiny;font-weight: bold;word-spacing: 3px;font-size:25px;';><div style='font-family: Courier New;font-weight: bold;'>Auditorium Imanlocha</div><hr width="50%" color="white"></div></center>
+          
+
+          <div class="row" style="margin-top: 50px;">
+                  <div class="col-lg-6">
+                      <center>
+                          <div id="carouselExampleControls" class="carousel slide shadow p-3 mb-5 bg-white rounded" data-ride="carousel" style="width:80%; margin:0 auto;padding: 10px 20px ">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" >
+                                      <img  src='audi2.png'  class='image img-fluid img-responsive' style="height: 300px;" >
+                                      <div class="carousel-caption d-none d-md-block over">
+                                         <img  src='lgo.jpg' style='width:100px;height:100px;border-radius: 50%;margin-top: 50px;'>
+                                         <h4>Per day charge is <span>2000Rs</span></h4></br>
+                                         <button  class='btn btn-danger' style='padding:2px 100px;margin-left: 30px;'  data-toggle="modal" data-target="#myModal2">see availability & Book</button>
+                                      </div>
+
+                                  </div>   
+                               </div>
+                               
+                          </div>
+                        </center></br>
+                   </div> 
+
+
+                   <div class="col-lg-6">
+                      <center>
+                          <div id="carouselExampleControls" class="carousel slide shadow p-3 mb-5 bg-white rounded" data-ride="carousel" style="width:80%; margin:0 auto;padding: 10px 20px ">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" >
+                                      <img  src='audi2.png'  class='image img-fluid img-responsive' style="height: 300px;"  >
+                                      <div class="carousel-caption d-none d-md-block over">
+                                         <img  src='lgo.jpg' style='width:100px;height:100px;border-radius: 50%;margin-top: 50px;'>
+                                         <h4>Per day charge is <span>2000Rs</span></h4></br>
+                                         <button  class='btn btn-danger' style='padding:2px 100px;margin-left: 30px;'  data-toggle="modal" data-target="#myModal2">see availability & Book</button>
+                                      </div>
+
+                                  </div>   
+                               </div>
+                                
+                          </div>
+                        </center></br>
+                   </div>
+
+
+            </div>        
+
+
+  
+
+</section>
+
+
+
+
+
+<section style='margin-top:60px;'>
+       <center><div style='color:red;font-family:coiny;font-weight: bold;word-spacing: 3px;font-size:25px;';><div style='font-family: Courier New;font-weight: bold;'>Auditorium Stephen Jaklin</div><hr width="50%" color="white"></div></center>
+
+          <center>
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:80%; margin:0 auto;padding: 10px 20px ">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" >
+                          <img  src='audi3.jpg' style='width:100%;height:400px;' class='image shadow'>
+                          <div class="carousel-caption d-none d-md-block over">
+                            <img  src='lgo.jpg' style='width:100px;height:100px;border-radius: 50%;margin-top: 50px;'>
+                            <h4>Per day charge is <span>3000Rs</span></h4></br>
+                            <button  class='btn btn-danger' style='padding:2px 100px;margin-left: 30px;'  data-toggle="modal" data-target="#myModal3">see availability & Book</button>                        
+                          </div>
+                      </div>                     
+                    </div>
+                   
+              </div>
+          </center></br>
+
+
+    
+</section>
+
+<%-include('footer')-%>
+
+</body>
+</html>

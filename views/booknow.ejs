@@ -1,0 +1,53 @@
+<%-include('header')-%>
+ 
+<style type="text/css">
+  label
+  {
+    width: 150px;
+  }
+</style>
+
+<section style="margin-top:0px;">
+  <div class="contain">
+    <div class="row" style="margin:0 auto">
+         <div class="col-lg-3" style="background-color: rgb(255, 230, 204);">
+          <h4 style="text-align: center;margin-top:10%;">SOME GUIDELINES</h4>
+               <div  style="padding: 5% 0%;margin-left: 20px;"> Kindly fill the form with correct detail.As this record will be permanenty saved </br></br>
+               The rooms of the hotel are luxurios .In case of any damage by you the hotel may charge you </br></br>
+               In case of wrong submission of arrival or departure date while booking, then hotel will not responsible for this </br></br>
+               please take  the screen shot of the payment</div>
+         </div>
+
+        
+             <div class="col-lg-9" style="padding: 60px 50px;margin:0 auto" id="formbed">
+                   <div style="font-weight: bold;text-align: center;font-family: Courier New;font-size: 25px;color:rgb(0, 0, 102)"> Final Submission </div>
+                   <hr width="95%" color="black">
+                 <center>
+                   <form  class="form-signin" style="margin-top:30px;" method="post" action="/finaldetail">
+                      <label>Enter Name:-</label> 
+                      <input type="text" name="fullname" id="fullname" required autofocus style='width:60%'></br> </br>
+                      <label>Enter Contact:-</label>
+                      <input type="text" name="contact" id="contact"  required autofocus style="width:60%"></br> </br>
+                      <label>Enter Email:-</label>
+                      <input type="email" name="email" id="email" required autofocus style="width:60%"></br> </br>
+ 
+                      Select the mode of payment</br>
+                      cash_on_location<input type="radio" name="radio" id="radio" value="cash_on_location" required autofocus> 
+                      Online_payment<input type="radio" name="radio" id="radio" value="Online_payment" required autofocus >
+                  </br>
+                 <input type="hidden" name="typeofroom" value="<%= typeofroom%>">
+                 <input type="hidden" name="checkindate" value="<%= checkindate%>">
+                 <input type="hidden" name="checkoutdate" value="<%= checkoutdate%>">
+                 <input type="hidden" name="location" value="<%= location%>">
+                 <input type="hidden" name="nameofhotel" value="<%= nameofhotel %>">
+                 <button class="btn btn-outline-danger "type="submit" style="margin-left: 10%;width:200px;border-radius:20px;margin-bottom:10px;margin-top: 10px;" id="submit2" name=" button" value="submit" >BOOK_NOW</button>
+                </form>
+              </center>
+         </div>
+     </div>
+  
+  </div>
+  
+</section>
+
+<%- include("footer") -%>

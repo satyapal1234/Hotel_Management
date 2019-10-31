@@ -1,0 +1,408 @@
+
+.head{
+
+  font-size: 38px;
+  font-family: coiny;
+  color: black;
+  text-align: center;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px yellow, 0 0 20px blue, 0 0 30px lightblue, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+  }
+  to {
+    text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg);
+  }
+}
+
+#logomake {
+    animation-name:            rotate; 
+    animation-duration:        4s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.icon {
+  padding: 10px;
+  background: red;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#submit5,#submit1,#submit2,#submit3
+{
+  background-color: red;
+  color:white;
+  background-image: linear-gradient(10deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.5) 51%);
+}
+
+
+#a
+{
+	margin:8px;
+	color:green;
+	font-weight: bold;
+	font-family: cursive;
+
+}
+
+#li:hover
+{
+color: rgb(255, 83, 26);
+cursor:pointer;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:rgb(251, 97, 99);
+}
+#ig1
+{
+  width: 70%;
+  height: 50%;
+  border-radius: 50%;
+}
+#ig1:hover
+{
+   position:relative;
+    width:80%;
+    height:60%;
+    display:block;
+    z-index:999;
+}
+
+#igx:hover
+{
+   position:relative;
+    width:500px;
+    height:200px;
+    display:block;
+    z-index:999;
+}
+
+#abcd
+{
+  background-image: url("back.jpg");
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+#xyz
+{
+  background-image: url("blue.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+            
+ background-size: cover;
+}
+
+
+.avatar {
+           
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-top: -20px;
+           
+        }
+
+
+ .contact-form
+        {
+          
+            top: 80%;
+            left: 50%;
+          
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba();
+        }
+    .contact-form h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: black;
+            text-align: center;
+           
+        }
+        .contact-form p
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: black;
+        }
+.contact-form input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+ .contact-form input[type="email"],
+ .contact-form input[type="text"],
+  .contact-form input[type="password"]
+        {
+            border: none;
+            border-bottom: 0.2px solid lightgray;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: black;
+            font-size: 16px;
+        }       
+
+         .contact-form input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 15%;
+        }
+
+
+
+        .contact-form a
+        {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+
+
+.cont {
+  position: relative;
+ 
+}
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.cont:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+ .animgated5 {
+           
+            -webkit-animation-duration: 10s; 
+            animation-duration: 10s; 
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; 
+            -webkit-animation: bounceInLeft 5s infinite; /* Safari 4.0 - 8.0 */
+            animation: bounceInLeft 5s infinite;
+         }
+         
+         @-webkit-keyframes bounceInLeft {
+            0% {
+               opacity: 0;
+               -webkit-transform: translateX(-2000px);
+            }
+            60% {
+               opacity: 1;
+               -webkit-transform: translateX(30px);
+            }
+            80% {
+               -webkit-transform: translateX(-10px);
+            }
+            100% {
+               -webkit-transform: translateX(0);
+            }
+         }
+         
+         @keyframes bounceInLeft {
+            0% {
+               opacity: 0;
+               transform: translateX(-2000px);
+            }
+            60% {
+               opacity: 1;
+               transform: translateX(30px);
+            }
+            80% {
+               transform: translateX(-10px);
+            }
+            100% {
+               transform: translateX(0);
+            }
+         }
+         
+         .bounceInLeft {
+            -webkit-animation-name: bounceInLeft;
+            animation-name: bounceInLeft;
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          .yanimated6 {
+      
+            -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation: bounceInRight 5s infinite; /* Safari 4.0 - 8.0 */
+            animation: bounceInRight 5s infinite;
+         }
+         
+         @-webkit-keyframes bounceInRight {
+            0% {
+               opacity: 0;
+               -webkit-transform: translateX(2000px);
+            }
+            60% {
+               opacity: 1;
+               -webkit-transform: translateX(-30px);
+            }
+            80% {
+               -webkit-transform: translateX(10px);
+            }
+            100% {
+               -webkit-transform: translateX(0);
+            }
+         }
+         
+         @keyframes bounceInRight {
+            0% {
+               opacity: 0;
+               transform: translateX(2000px);
+            }
+            60% {
+               opacity: 1;
+               transform: translateX(-30px);
+            }
+            80% {
+               transform: translateX(10px);
+            }
+            100% {
+               transform: translateX(0);
+            }
+         }
+         
+         .bounceInRight {
+            -webkit-animation-name: bounceInRight;
+            animation-name: bounceInRight;
+         }
+
+
+
+
+
+
+         .animated4 { 
+           font-family: coiny;
+            -webkit-animation-duration: 10s;
+            animation-duration: 10s; 
+            -webkit-animation-fill-mode: both; 
+            animation-fill-mode: both; 
+              -webkit-animation: tada 5s infinite; /* Safari 4.0 - 8.0 */
+            animation: tada 5s infinite;
+         }
+         
+         @-webkit-keyframes tada { 
+            0% {-webkit-transform: scale(1);}
+            10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);} 
+            30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+            40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);} 
+            100% {-webkit-transform: scale(1) rotate(0);} 
+         }
+         
+         @keyframes tada { 
+            0% {transform: scale(1);} 
+            10%, 20% {transform: scale(0.9) rotate(-3deg);} 
+            30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);} 
+            40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);} 
+            100% {transform: scale(1) rotate(0);}
+         }
+         
+         .tada { 
+            -webkit-animation-name: tada; 
+            animation-name: tada; 
+         }
+
+
+
+
+
+
+
+
+
+

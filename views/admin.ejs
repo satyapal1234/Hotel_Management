@@ -1,0 +1,336 @@
+<% if(ses.length==5){ %>
+
+  <%- include("header3") -%>
+
+<% } else {%>  
+
+  <%- include("header") -%>
+
+<% } %>
+
+
+<style>
+  #showpage {
+  background-image: linear-gradient(to right, orange,white,white,white,white,white,orange);
+}
+</style>    
+    
+
+       
+<section  id="showpage" style="padding:5% 7%" class="container-fluid">
+         <div class="container">
+           <div class="row">
+                 <div class="col-lg-4" style="margin-top:20px;">
+                   <center>
+                     <img id="ig1" src="i1.jpg" class="img-thumbnail" alt="Responsive image" >
+                     <div style="margin-top:10px;">
+                        <h5 style="text-align:center;text-decoration:underline;">Mr john </h5>
+                     </div>
+                     <div style="margin-top:10px;">
+                        <button class="btn btn-info " onclick="opendirectorlogin()">Hotel Director</button>
+                     </div>
+                   </center>
+                 </div>
+
+
+                 <div class="col-lg-4" style="margin-top:20px;">
+                     <center>
+                     <img id="ig1" src="i2.jpg" class="img-thumbnail" alt="Responsive image" >
+                     <div style="margin-top:10px;">
+                        <h5 style="text-align:center;text-decoration:underline;">Mr john </h5>
+                     </div>
+                     <div style="margin-top:10px;">
+                        <button class="btn btn-info "   onclick="openadminstratorlogin()">Hotel adminstrator</button>
+                     </div>
+                   </center>
+                 </div>
+
+
+                 <div class="col-lg-4" style="margin-top:20px;">
+                   <center>
+                     <img id="ig1" src="i3.jpg" class="img-thumbnail" alt="Responsive image" >
+                     <div style="margin-top:10px;">
+                        <h5 style="text-align:center;text-decoration:underline;">Mr john </h5>
+                     </div>
+                     <div style="margin-top:10px;">
+                        <button class="btn btn-info "   onclick="openmanagerlogin()">Hotel Manager</button>
+                     </div>
+                   </center>
+                 </div>
+            </div>
+       </div>
+
+
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="xyz" style="background-color: blacks;">
+
+<div  id="mainbody">
+
+  <div class="container">
+
+   <div class="col-lg-12 container">
+     <div id="director" class="contact-form" >
+         <center><img src="i1.jpg" class="avatar"></center>
+        <h2 style="margin-top:10px;font-family:cursive;">Director Login Form</h2>
+        <hr width="100%" color="black">
+        <form style="margin-top:10px;"  >
+            <p>Email</p>
+            <input type="email" name="email" placeholder="Enter Email" id="email3" >
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password" id="password3">
+             <button style="background-color:rgb(0, 204, 255);font-weight:bold;" class="btn btn-lg  btn-block" type="submit" name="button" value="user"  id="submit3" >Log_In</button>
+        </form>
+     </div>
+   </div>
+
+
+  </div> 
+
+
+
+ <div class="container">
+
+
+   <div class="col-lg-12 container">
+    <div id="adminstrator" class="contact-form" style="margin:0 auto;">
+         <center><img src="2.jpg" class="avatar"></center>
+        <h2 style="margin-top:10px;font-family:cursive;">Adminstrator Login Form</h2>
+        <hr width="100%" color="black">
+        <form style="margin-top:10px;" >
+            <p>Email</p>
+            <input type="email" name="email" placeholder="Enter Email" id="email2">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password" id="password2">
+            <button  style="background-color:rgb(0, 204, 255);font-weight:bold;" class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="user"  id="submit2" onclick="openadminstratorlogin()">Log_In</button>
+
+           
+            
+        </form>
+    </div>
+  </div>
+
+
+  </div>
+
+
+<div class="container">
+
+
+   <div class="col-lg-12 container">
+    <div id="manager" class="contact-form" style="margin:0 auto;">
+        <p id="demo" style="color:white ;font-family: coiny;"></p>
+         <center><img src="2.jpg" class="avatar"></center>
+        <h2 style="margin-top:10px;font-family:cursive;">Manager Login Form</h2>
+        <hr width="100%" color="black">
+        <form style="margin-top:10px;" >
+            <p>Email</p>
+            <input type="email" name="email" placeholder="Enter Email" id="email1">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password" id="password1">
+            <button style="background-color:rgb(0, 204, 255);font-weight:bold;"  class="btn btn-lg btn-primary btn-block" type="submit" name="button" value="user"  id="submit1" onclick="openmanagerlogin()">Log_In</button>
+            
+        </form>
+    </div>
+  </div>
+  </div>
+
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+$(document).ready(function(){
+    var email,pass;
+    $("#submit1").click(function(){
+        email=$("#email1").val();
+         pass=$("#password1").val();
+        if(email===""||pass==="")
+        {
+          alert('some fields are empty');
+          return false;
+        }
+        $.post("/managerlogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/managerwork";
+            }
+            else if(data==='wrong')
+            {
+              alert("wrong email");
+            }
+            else if(data==='verify')
+            {
+              window.location.href="/firstverify";
+            }
+            else if(data==='oops')
+            {
+              alert('no such user exist');
+            }
+            else
+            {
+              alert('try again');
+            }
+        });
+    });
+});
+
+
+
+
+
+
+
+$(document).ready(function(){
+    var email,pass;
+    $("#submit2").click(function(){
+        email=$("#email2").val();
+         pass=$("#password2").val();
+        
+        if(email===""||pass==="")
+        {
+          alert('some fields are empty');
+          return false;
+        }
+
+
+        $.post("/adminstratorlogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/adminstratorwork";
+            }
+            else if(data==='wrong')
+            {
+              alert("wrong password");
+            }
+            else if(data==='verify')
+            {
+              window.location.href="/firstverify";
+            }
+            else if(data==='oops')
+            {
+              alert('no such user exist');
+            }
+        });
+    });
+});
+
+
+
+
+
+$(document).ready(function(){
+    var email,pass;
+    $("#submit3").click(function(){
+        email=$("#email3").val();
+         pass=$("#password3").val();
+        
+        if(email===""||pass==="")
+        {
+          alert('some fields are empty');
+          return false;
+        }
+        
+        $.post("/directorlogin",{email:email,password:pass},function(data){
+            if(data==='done') {
+              window.location.href="/directorwork";
+            }
+            else if(data==='wrong')
+            {
+              alert("wrong email");
+            }
+
+            else if(data==='verify')
+            {
+              window.location.href="/firstverify";
+            }
+
+            else if(data==='oops')
+            {
+              alert('no such user exist');
+            }
+        });
+    });
+});
+
+
+      document.getElementById("director").style.display="none";
+          document.getElementById("manager").style.display="none";
+          document.getElementById("adminstrator").style.display="none";
+          function opendirectorlogin()
+         {
+          document.getElementById("director").style.display="block";
+          document.getElementById("showpage").style.display="none";
+          document.getElementById("manager").style.display="none";
+          document.getElementById("adminstrator").style.display="none";
+          //document.getElementById("showpage").style.display="none";
+         }
+
+          function openadminstratorlogin()
+         {
+          document.getElementById("director").style.display="none";
+          document.getElementById("showpage").style.display="none";
+          document.getElementById("manager").style.display="none";
+          document.getElementById("adminstrator").style.display="block";
+          //document.getElementById("showpage").style.display="none";
+         }
+  
+
+           function openmanagerlogin()
+         {
+          document.getElementById("director").style.display="none";
+          document.getElementById("showpage").style.display="none";
+          document.getElementById("manager").style.display="block";
+          document.getElementById("adminstrator").style.display="none";
+          //document.getElementById("showpage").style.display="none";
+         }
+
+
+
+
+
+        
+          
+     
+   
+    </script>
+
+  </body>
+
+  </html>
